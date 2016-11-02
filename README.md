@@ -7,9 +7,9 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 
 #Todo
 
-Add shooting arrows
-Add damage detection for slime monster
-Add damage for player/slime attacks
-Add health/dying
-Add XP/Leveling
-Add dungeon generation? / Room progression
+- [ ] Add shooting arrows
+- [ ]Add damage detection for slime monster
+- [ ]Add damage for player/slime attacks
+- [ ]Add health/dying
+- [ ]Add XP/Leveling
+- [ ]Add dungeon generation? / Room progression
