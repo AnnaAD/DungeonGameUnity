@@ -13,6 +13,7 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 ##Todo
 - [X] Add player movement (could use improvement)
 - [ ] Add shooting arrows
+- [ ] Add sword combat
 - [ ] Add damage detection for slime monster
 - [ ] Add damage for player/slime attacks
 - [ ] Add health/dying
