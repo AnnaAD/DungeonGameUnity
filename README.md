@@ -1,11 +1,11 @@
 # DungeonGameUnity
 A WIP unity dungeon game
 
-#Edits
+##Edits
 
 Becareful with editing stuff because this is a Unity project and weird things happen. Don't just upload what you think you changed please. I work with the Github app and it automatically syncs with the file on my computer to figure out and commit changes. 
 
-#Todo
+##Todo
 - [X] Add player movement (could use improvement)
 - [ ] Add shooting arrows
 - [ ] Add damage detection for slime monster
