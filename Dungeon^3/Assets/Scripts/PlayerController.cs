@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour {
 	public float damping = 1;
 	public float gravity = 100.0F;
 
+	private Plane plane =  new Plane(Vector3.up, Vector3.zero);
+
+
 	private Rigidbody rBody;
 
 	public float speed = 5.0F;
@@ -32,16 +35,31 @@ public class PlayerController : MonoBehaviour {
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
 
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		float ent = 100.0f;
+		if (plane.Raycast(ray, out ent)) {
+			Debug.Log("Plane Raycast hit at distance: " + ent);
+			Vector3 hitPoint = ray.GetPoint(ent);
+			hitPoint.y = transform.position.y;
+			transform.LookAt(hitPoint);
+			Debug.DrawRay (ray.origin, ray.direction * ent, Color.green);
+		} else {
+			Debug.DrawRay (ray.origin, ray.direction * 10, Color.red);
 
+		}
+
+
+		/* 
 		Vector3 pos = new Vector3(Input.mousePosition.x - 500,0,Input.mousePosition.y - 300);
 
-		//transform.LookAt(Vector3.Scale(Camera.main.ScreenToWorldPoint(Input.mousePosition) , noY));
+		transform.LookAt(Vector3.Scale(Camera.main.ScreenToWorldPoint(Input.mousePosition) , noY));
 		transform.LookAt(pos);
+
+		Ray ray = Camera.main.ScreenPointToRay(new Vector3(200, 200, 0));
+		Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
 
 		//TODO: This kind of works... Think about actually fixing the problem though...
 
-
-		/*
 
 		Debug.Log(Input.mousePosition);
 		Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
