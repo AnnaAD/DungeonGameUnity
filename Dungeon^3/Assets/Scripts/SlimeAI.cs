@@ -15,7 +15,7 @@ public class SlimeAI : MonoBehaviour {
 
 		float moveX = 0;
 		float moveZ = 0;
-		GameObject player = GameObject.Find ("Player");
+		GameObject player = GameObject.Find("Player");
 		if (player.transform.position.x > transform.position.x) {
 			moveX = 1;
 		} else {
@@ -30,6 +30,7 @@ public class SlimeAI : MonoBehaviour {
 
 		rBody.velocity = new Vector3 (moveX, 0f, moveZ);
 
+		transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
 
 	}
 }
