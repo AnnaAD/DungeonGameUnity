@@ -26,47 +26,39 @@ public class GenerateDungeon : MonoBehaviour {
 	}
 	
 	void Generate() {
-		generateRoom(0,0,1f);
+		Instantiate(rFourDoor, new Vector3(0,0,0), Quaternion.identity);
+		generateRoom(0, 10, Quaternion.identity);
+		generateRoom(0, -10, Quaternion.Euler(new Vector3(0,180,0)));
+		generateRoom(10, 0, Quaternion.Euler(new Vector3(0,90,0)));
+		generateRoom(-10, 0, Quaternion.Euler(new Vector3(0,-90,0)));
+
 	}
 
 	//Recursive function that generates a room and calls generate room for each side that needs to be generated!
-	private void generateRoom(float x, float z, float fade) {
-		
+	private void generateRoom(float x, float z, Quaternion rotation) {
 
-		float branchFactor = Random.value;
-
-		GameObject room = Instantiate(rFourDoor, new Vector3(x, 0f, z), Quaternion.identity) as GameObject;
-		room.name = "Room" + counter;
-
-		if(Random.value < 0.2 * fade + branchFactor) {
-			counter++;
-			generateRoom(x + 10, z, fade * fadeMultiplier);
-			if(counter > maxRooms) {
-				return;
-			}
-		}
-		if(Random.value < 0.2 * fade + branchFactor) {
-			counter++;
-			generateRoom(x - 10, z, fade * fadeMultiplier);
-			if(counter > maxRooms) {
-				return;
-			}
-		}
-		if(Random.value < 0.2 * fade + branchFactor) {
-			counter++;
-			generateRoom(x, z+10, fade * fadeMultiplier);
-			if(counter > maxRooms) {
-				return;
-			}
-		}
-		if(Random.value < 0.2 * fade + branchFactor) {
-			counter++;
-			generateRoom( x, z-10, fade * fadeMultiplier);
-			if(counter > maxRooms) {
-				return;
-			}
+		int roomType = Mathf.RoundToInt(Random.value * 5);
+		if (roomType == 0) {
+			Instantiate(rOneDoor, new Vector3(x,0,z), rotation);
+		} else if (roomType == 1) {
+			Instantiate(rTwoOppDoor, new Vector3(x,0,z), rotation);
+			generateRoom(-10, 0, Quaternion.identity);
+			generateRoom(-10, 0, Quaternion.identity);
+		} else if(roomType == 2) {
+			//Instantiate(rTwoAdjDoor, new Vector3(x,0,z), rotation);
+			//generateRoom(-10, 0, Quaternion.identity);
+			//generateRoom(-10, 0, Quaternion.identity);
+		} else if (roomType == 3) {
+			Instantiate(rThreeDoor, new Vector3(x,0,z), rotation);
+			generateRoom(-10, 0, Quaternion.identity);
+			generateRoom(-10, 0, Quaternion.identity);
+		} else {
+			Instantiate(rFourDoor, new Vector3(x,0,z), rotation);
+			generateRoom(-10, 0, Quaternion.identity);
+			generateRoom(-10, 0, Quaternion.identity);
 		}
 	}
+
 }
 
 

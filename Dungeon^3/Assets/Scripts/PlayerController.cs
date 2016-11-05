@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		float ent = 100.0f;
 		if (plane.Raycast(ray, out ent)) {
-			Debug.Log("Plane Raycast hit at distance: " + ent);
+			//Debug.Log("Plane Raycast hit at distance: " + ent);
 			Vector3 hitPoint = ray.GetPoint(ent);
 			hitPoint.y = transform.position.y;
 			transform.LookAt(hitPoint);

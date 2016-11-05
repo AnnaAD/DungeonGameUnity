@@ -2,35 +2,31 @@
 using System.Collections;
 
 public class SlimeAI : MonoBehaviour {
-
+	public int health = 100;
 	private Rigidbody rBody;
+	private GameObject Player;
+
 
 	// Use this for initialization
 	void Start () {
 		rBody = GetComponent<Rigidbody> ();
+		player = GameObject.Find("Player");
 	}
 	
 	// Update is called once per frame
 	void Update (){
-
-		float moveX = 0;
-		float moveZ = 0;
-		GameObject player = GameObject.Find("Player");
-		if (player.transform.position.x > transform.position.x) {
-			moveX = 1;
-		} else {
-			moveX = -1;
-		}
-
-		if (player.transform.position.z > transform.position.z) {
-			moveZ = 1;
-		} else {
-			moveZ = -1;
-		}
-
-		rBody.velocity = new Vector3 (moveX, 0f, moveZ);
+		transform.LookAt(player);
+		rBody.velocity = transform.forward * 6;
 
 		transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
 
+	}
+
+	public void Damage(int number) {
+		health -= number;
+		Debug.Log(health);
+		if (health <= 0) {
+			Destroy(gameObject);
+		}
 	}
 }
