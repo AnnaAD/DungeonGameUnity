@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour {
 	public Transform bulletSpawn;
 	public float speed = 5.0F;
 
-	void Start() {
 
+	void Start() {
 	}
 
 	void Update() {
