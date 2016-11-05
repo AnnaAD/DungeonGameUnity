@@ -2,18 +2,17 @@
 using System.Collections;
 
 public class ArrowBehavior : MonoBehaviour {
-	private int lifeCount;
+	Rigidbody rigidbody;
 	// Use this for initialization
 	void Start () {
-		lifeCount = 100;
+		rigidbody = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(lifeCount >= 0) {
+	}
 
-		} else {
-			Destroy(gameObject);
-		}
+	void OnCollisionEnter (Collision col) {
+		rigidbody.constraints = RigidbodyConstraints.None;
 	}
 }
