@@ -11,6 +11,7 @@ public class SlimeAI : MonoBehaviour {
 	void Start () {
 		rBody = GetComponent<Rigidbody> ();
 		player = GameObject.Find("Player");
+		//commments are great
 	}
 	
 	// Update is called once per frame
