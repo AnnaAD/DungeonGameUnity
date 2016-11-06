@@ -12,10 +12,17 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 
 ##Todo
 - [X] Add player movement (could use improvement)
-- [ ] Add shooting arrows
-- [ ] Add sword combat
-- [ ] Add damage detection for slime monster
-- [ ] Add damage for player/slime attacks
-- [ ] Add health/dying
+- [X] Add shooting arrows
+- [X] Add sword combat
+- [X] Add damage detection for slime monster
+- [X] Add damage for player/slime attacks
+- [X] Add health/dying
 - [ ] Add XP/Leveling
 - [ ] Add dungeon generation? / Room progression
+- [ ] Add different monsters
+- [ ] Better enemy AI
+- [ ] Inventory
+- [ ] Items
+- [ ] More Weapons
+- [ ] Menu/Settings
+
