@@ -19,13 +19,16 @@ public class SwordController : MonoBehaviour {
         }
         if(isStabbing)
         {
-            if (ticksSinceStart < 20)
+            if (ticksSinceStart <= 10)
             {
-                transform.Rotate(3, 0, 0);
+                transform.Rotate(6, 0, 0);
+                //transform.Translate(new Vector3(0f,0f,.02f),Space.Player);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z + .03f);
             }
-            else if (ticksSinceStart >= 20 && ticksSinceStart < 40)
+            else if (ticksSinceStart > 10 && ticksSinceStart <= 21)
             {
-                transform.Rotate(-3, 0, 0);
+                transform.Rotate(-6, 0, 0);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z - .03f);
             }
             else
             {
