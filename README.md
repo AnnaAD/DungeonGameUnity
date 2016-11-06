@@ -20,9 +20,8 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 - [ ] Add XP/Leveling
 - [ ] Add dungeon generation? / Room progression
 - [ ] Add different monsters
-- [ ] Better enemy AI
 - [ ] Inventory
 - [ ] Items
 - [ ] More Weapons
 - [ ] Menu/Settings
-
+- [ ] Add Red Vision at Low Health
