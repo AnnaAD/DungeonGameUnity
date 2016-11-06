@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class SlimeAI : MonoBehaviour {
-	public int health = 10;
+	private int health = 10;
 	private Rigidbody rBody;
 	private GameObject player;
 	private bool colliding = false;

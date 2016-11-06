@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour {
 			bulletSpawn.rotation) as GameObject;
 
 		// Add velocity to the bullet
-		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6;
+		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 7f;
 
 		// Destroy the bullet after 2 seconds
 		Destroy(bullet, 1.5f);  
