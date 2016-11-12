@@ -48,10 +48,12 @@
      <Compile Include="Assets\Scripts\ArrowBehavior.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\GenerateDungeon.cs" />
+     <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\SlimeAI.cs" />
      <Compile Include="Assets\Scripts\SwordController.cs" />
+     <Compile Include="Assets\Scripts\SwordSwing.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
