@@ -22,4 +22,6 @@ public class ArrowBehavior : MonoBehaviour {
 			col.gameObject.GetComponent<Enemy>().Damage(1);
 		}
 	}
+
+
 }
