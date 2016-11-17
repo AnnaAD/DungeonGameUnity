@@ -14,13 +14,10 @@ public class SwordController : MonoBehaviour {
 	void Update () {
 	    
 	}
-    void OnCollisionEnter(Collision col)
-    {
+    void OnCollisionEnter(Collision col) {
 
-        //TODO: Eventually change this to tag of 'enemy' or something
-        if (col.gameObject.name == "Slime" && pivotPoint.GetComponent<SwordSwing>().isStabbing)
-        {
-            col.gameObject.GetComponent<SlimeAI>().Damage(4);
+        if (col.gameObject.tag == "Enemy" && pivotPoint.GetComponent<SwordSwing>().isStabbing) {
+			col.gameObject.GetComponent<Enemy>().Damage(4);
         }
     }
 }

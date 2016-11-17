@@ -17,10 +17,9 @@ public class ArrowBehavior : MonoBehaviour {
 
 	void OnCollisionEnter (Collision col) {
 		rigidbody.constraints = RigidbodyConstraints.None;
-		//TODO: Eventually change this to tag of 'enemy' or something
 		if(col.gameObject.tag == "Enemy") {
 			Debug.Log("Damage");
-			col.gameObject.GetComponent<SlimeAI>().Damage(1);
+			col.gameObject.GetComponent<Enemy>().Damage(1);
 		}
 	}
 }
