@@ -18,11 +18,15 @@ public class PurpleSlime : Enemy {
 		transform.LookAt(player.transform);
 
 		//Debug.Log(Vector3.Distance(player.transform.position,transform.position));
-		if(Vector3.Distance(player.transform.position,transform.position) > 3f) {
+		if(Vector3.Distance(player.transform.position,transform.position) > 5f) {
 			rBody.velocity = transform.forward * 3;
+		} else if(Vector3.Distance(player.transform.position,transform.position) < 2f) {
+			rBody.velocity = transform.forward * -3;
 		} else {
 			rBody.velocity = Vector3.zero;
 		}
+
+
 
 		if(counter > 10) {
 			counter = 0;
