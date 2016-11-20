@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour {
 		cam = Camera.main.transform;
 		camForward = Vector3.Scale(cam.forward, new Vector3(1, 0, 1)).normalized;
 		CharacterController controller = GetComponent<CharacterController>();
-		float inputX = Input.GetAxis("Horizontal");
-		float inputZ = Input.GetAxis("Vertical");
+		float inputX = Input.GetAxisRaw("Horizontal");
+		float inputZ = Input.GetAxisRaw("Vertical");
 		moveDirection = (inputZ*camForward + inputX*cam.right).normalized;
 		moveDirection *= speed;
 		moveDirection.y = 0;

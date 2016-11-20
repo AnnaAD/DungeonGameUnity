@@ -47,8 +47,8 @@ public class GreenSlime : Enemy {
 
 
 		}
-		Debug.Log(lastSeen);
-		Debug.Log(checkedLastSeen);
+		//Debug.Log(lastSeen);
+		//Debug.Log(checkedLastSeen);
 	}
 
 	private bool CanSeePlayer(){
