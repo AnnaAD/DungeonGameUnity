@@ -37,9 +37,9 @@ public class PlayerController : MonoBehaviour {
 			Vector3 hitPoint = ray.GetPoint(ent);
 			hitPoint.y = transform.position.y;
 			transform.LookAt(hitPoint);
-			Debug.DrawRay (ray.origin, ray.direction * ent, Color.green);
+			//Debug.DrawRay (ray.origin, ray.direction * ent, Color.green);
 		} else {
-			Debug.DrawRay (ray.origin, ray.direction * 10, Color.red);
+			//Debug.DrawRay (ray.origin, ray.direction * 10, Color.red);
 
 		}
 
