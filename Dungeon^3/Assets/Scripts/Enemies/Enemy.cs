@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour {
 		health -= number;
 		Debug.Log(health);
 		if (health <= 0) {
-			Die();
+			GetComponent<Animator>().SetTrigger("Die");
 		}
 	}
 
@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	public void Die() {
+
 		Destroy(gameObject);
 	}
 }
