@@ -17,7 +17,8 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 - [X] Add damage detection for slime monster
 - [X] Add damage for player/slime attacks
 - [X] Add health/dying
-- [ ] Add XP/Leveling
+- [X] Add XP
+- [ ] Add Levelling Up and Character Stats
 - [ ] Add dungeon generation? / Room progression
 - [ ] Add different monsters
 - [ ] Inventory
