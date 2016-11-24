@@ -13,18 +13,19 @@ public class PlayerController : MonoBehaviour {
 	private GameObject pivotPoint;
 	public Transform bulletSpawn;
 	public float speed = 5.0F;
+	private CharacterController controller;
 
 
 	void Start() {
 		worldManager = GameObject.Find ("WorldManager");
 		pivotPoint = GameObject.Find ("Pivot point");
+		cam = Camera.main.transform;
+		camForward = Vector3.Scale (cam.forward, new Vector3 (1, 0, 1)).normalized;
+		controller = GetComponent<CharacterController> ();
 	}
 
 	void Update() {
 		if (!worldManager.GetComponent<UImanager> ().isPaused) {
-			cam = Camera.main.transform;
-			camForward = Vector3.Scale (cam.forward, new Vector3 (1, 0, 1)).normalized;
-			CharacterController controller = GetComponent<CharacterController> ();
 			float inputX = Input.GetAxisRaw ("Horizontal");
 			float inputZ = Input.GetAxisRaw ("Vertical");
 			moveDirection = (inputZ * camForward + inputX * cam.right).normalized;
