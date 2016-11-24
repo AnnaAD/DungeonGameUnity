@@ -64,5 +64,8 @@ public class PlayerController : MonoBehaviour {
 		// Destroy the bullet after 2 seconds
 		Destroy(bullet, 1.5f);  
 	}
+	//TODO: Assign statistics (i.e. speed, strength, etc. and have them incremented when character levels up)
+	public void LevelUp(){
+	}
 		
 }

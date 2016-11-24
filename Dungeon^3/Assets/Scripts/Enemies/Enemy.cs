@@ -7,13 +7,15 @@ public class Enemy : MonoBehaviour {
 	public int damage;
 	public Rigidbody rBody;
 	public GameObject player;
-	public GameObject playerHealth;
-
+	private GameObject playerHealth;
+	private GameObject playerXP;
+	public int xp;
 	// Use this for initialization
 	void Start () {
 		rBody = GetComponent<Rigidbody> ();
 		player = GameObject.Find("Player");
-		playerHealth = GameObject.Find("Text");
+		playerHealth = GameObject.Find("Health");
+		playerXP = GameObject.Find("XP");
 		loadResources();
 	}
 
@@ -39,7 +41,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	public void Die() {
-
+		playerXP.GetComponent<PlayerXP>().addXP(xp);
 		Destroy(gameObject);
 	}
 }
