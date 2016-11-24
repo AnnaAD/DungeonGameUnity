@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
 	private GameObject pivotPoint;
 	public Transform bulletSpawn;
 	public float speed = 5.0F;
+	public float arrowSpeed = 9f;
 	private CharacterController controller;
 
 
@@ -66,7 +67,7 @@ public class PlayerController : MonoBehaviour {
 			bulletSpawn.rotation) as GameObject;
 
 		// Add velocity to the bullet
-		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 7f;
+		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * arrowSpeed;
 
 		// Destroy the bullet after 2 seconds
 		Destroy(bullet, 1.5f);  
