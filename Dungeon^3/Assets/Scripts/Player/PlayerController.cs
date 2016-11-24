@@ -8,47 +8,53 @@ public class PlayerController : MonoBehaviour {
 	private Vector3 move;
 	private Plane plane =  new Plane(Vector3.up, Vector3.zero);
 	private Vector3 moveDirection = Vector3.zero;
-
+	public GameObject worldManager;
 	public GameObject bulletPrefab;
+	private GameObject pivotPoint;
 	public Transform bulletSpawn;
 	public float speed = 5.0F;
 
 
 	void Start() {
+		worldManager = GameObject.Find ("WorldManager");
+		pivotPoint = GameObject.Find ("Pivot point");
 	}
 
 	void Update() {
+		if (!worldManager.GetComponent<Pause> ().isPaused) {
+			cam = Camera.main.transform;
+			camForward = Vector3.Scale (cam.forward, new Vector3 (1, 0, 1)).normalized;
+			CharacterController controller = GetComponent<CharacterController> ();
+			float inputX = Input.GetAxisRaw ("Horizontal");
+			float inputZ = Input.GetAxisRaw ("Vertical");
+			moveDirection = (inputZ * camForward + inputX * cam.right).normalized;
+			moveDirection *= speed;
+			moveDirection.y = 0;
+			controller.Move (moveDirection * Time.deltaTime);
 
-		cam = Camera.main.transform;
-		camForward = Vector3.Scale(cam.forward, new Vector3(1, 0, 1)).normalized;
-		CharacterController controller = GetComponent<CharacterController>();
-		float inputX = Input.GetAxisRaw("Horizontal");
-		float inputZ = Input.GetAxisRaw("Vertical");
-		moveDirection = (inputZ*camForward + inputX*cam.right).normalized;
-		moveDirection *= speed;
-		moveDirection.y = 0;
-		controller.Move(moveDirection * Time.deltaTime);
+
+			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+			float ent = 100.0f;
+			if (plane.Raycast (ray, out ent)) {
+				//Debug.Log("Plane Raycast hit at distance: " + ent);
+				Vector3 hitPoint = ray.GetPoint (ent);
+				hitPoint.y = transform.position.y;
+				transform.LookAt (hitPoint);
+				//Debug.DrawRay (ray.origin, ray.direction * ent, Color.green);
+			} else {
+				//Debug.DrawRay (ray.origin, ray.direction * 10, Color.red);
+
+			}
 
 
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		float ent = 100.0f;
-		if (plane.Raycast(ray, out ent)) {
-			//Debug.Log("Plane Raycast hit at distance: " + ent);
-			Vector3 hitPoint = ray.GetPoint(ent);
-			hitPoint.y = transform.position.y;
-			transform.LookAt(hitPoint);
-			//Debug.DrawRay (ray.origin, ray.direction * ent, Color.green);
-		} else {
-			//Debug.DrawRay (ray.origin, ray.direction * 10, Color.red);
-
+			if (Input.GetMouseButtonDown (0)) {
+				Fire ();
+			}
+			if (Input.GetMouseButtonDown (1)) {
+				pivotPoint.GetComponent<SwordAnimation>().Swing();
+			}
+			transform.position = new Vector3 (transform.position.x, 0.5f, transform.position.z);
 		}
-
-
-		if (Input.GetMouseButtonDown(0)) {
-			Fire();
-		}
-
-		transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
 	}
 
 	public void Fire() {
@@ -66,6 +72,7 @@ public class PlayerController : MonoBehaviour {
 	}
 	//TODO: Assign statistics (i.e. speed, strength, etc. and have them incremented when character levels up)
 	public void LevelUp(){
+		
 	}
 		
 }

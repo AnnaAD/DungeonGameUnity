@@ -5,7 +5,7 @@ public class SwordAnimation : MonoBehaviour {
 	
 
 	
-	 void Update(){
+	 public void Swing(){
 	 if (Input.GetMouseButtonDown(1))
      {
          GetComponent<Animator>().SetTrigger("RightClick");

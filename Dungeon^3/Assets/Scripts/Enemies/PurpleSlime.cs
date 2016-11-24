@@ -5,16 +5,16 @@ public class PurpleSlime : Enemy {
 
 	public GameObject SlimeArrow;
 	public Transform bulletSpawn;
-
-	private int counter;
+	public float timeBetweenShots;
+	private float counter;
 
 	public void loadResources() {
 		counter = 0;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		counter++;
+		counter+=Time.deltaTime;
 		transform.LookAt(player.transform);
 
 		//Debug.Log(Vector3.Distance(player.transform.position,transform.position));
@@ -28,7 +28,7 @@ public class PurpleSlime : Enemy {
 
 
 
-		if(counter > 10) {
+		if(counter > timeBetweenShots) {
 			counter = 0;
 			Shoot();
 		}
