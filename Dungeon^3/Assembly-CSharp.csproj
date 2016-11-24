@@ -45,7 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Pause.cs" />
      <Compile Include="Assets\PlayerXP.cs" />
      <Compile Include="Assets\Scripts\Enemies\BulletLogic.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
@@ -60,6 +59,7 @@
      <Compile Include="Assets\Scripts\Weapons\SwordAnimation.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordController.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordSwing.cs" />
+     <Compile Include="Assets\UImanager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

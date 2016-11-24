@@ -1,23 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Pause : MonoBehaviour {
+public class UImanager : MonoBehaviour {
 	public bool isPaused;
 	public GameObject menu;
 	// Use this for initialization
 	void Start () {
-		menu = GameObject.Find ("PauseMenu");
-		menu.SetActive (false);
+		//menu = GameObject.Find ("PauseMenu");
+		//menu.SetActive (false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetButtonDown("Cancel")){
-			togglePause ();
+			TogglePause ();
 		}
+
 	}
 
-	public void togglePause()
+	public void TogglePause()
 	{
 		if (!isPaused) {
 			isPaused = true;
@@ -28,5 +29,10 @@ public class Pause : MonoBehaviour {
 			Time.timeScale = 1.0f;
 			menu.SetActive (false);
 		}
+	}
+
+	public void Endgame()
+	{
+		Application.Quit ();
 	}
 }

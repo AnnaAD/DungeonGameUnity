@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update() {
-		if (!worldManager.GetComponent<Pause> ().isPaused) {
+		if (!worldManager.GetComponent<UImanager> ().isPaused) {
 			cam = Camera.main.transform;
 			camForward = Vector3.Scale (cam.forward, new Vector3 (1, 0, 1)).normalized;
 			CharacterController controller = GetComponent<CharacterController> ();
