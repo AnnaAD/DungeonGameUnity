@@ -3,15 +3,13 @@ using System.Collections;
 
 public class MenuScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	public void Play() {
+		Debug.Log("clicked play");
+		Application.LoadLevel("dungeon");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetMouseButtonDown(0)) {
-			Application.LoadLevel("dungeon");
-		}
+
+	public void Endgame() {
+		Debug.Log("clicked quit");
+		Application.Quit();
 	}
 }

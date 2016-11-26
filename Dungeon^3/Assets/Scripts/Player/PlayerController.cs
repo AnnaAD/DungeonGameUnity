@@ -13,18 +13,20 @@ public class PlayerController : MonoBehaviour {
 	private GameObject pivotPoint;
 	public Transform bulletSpawn;
 	public float speed = 5.0F;
+	public float arrowSpeed = 9f;
+	private CharacterController controller;
 
 
 	void Start() {
 		worldManager = GameObject.Find ("WorldManager");
 		pivotPoint = GameObject.Find ("Pivot point");
+		cam = Camera.main.transform;
+		camForward = Vector3.Scale (cam.forward, new Vector3 (1, 0, 1)).normalized;
+		controller = GetComponent<CharacterController> ();
 	}
 
 	void Update() {
 		if (!worldManager.GetComponent<UImanager> ().isPaused) {
-			cam = Camera.main.transform;
-			camForward = Vector3.Scale (cam.forward, new Vector3 (1, 0, 1)).normalized;
-			CharacterController controller = GetComponent<CharacterController> ();
 			float inputX = Input.GetAxisRaw ("Horizontal");
 			float inputZ = Input.GetAxisRaw ("Vertical");
 			moveDirection = (inputZ * camForward + inputX * cam.right).normalized;
@@ -65,7 +67,7 @@ public class PlayerController : MonoBehaviour {
 			bulletSpawn.rotation) as GameObject;
 
 		// Add velocity to the bullet
-		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 7f;
+		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * arrowSpeed;
 
 		// Destroy the bullet after 2 seconds
 		Destroy(bullet, 1.5f);  
