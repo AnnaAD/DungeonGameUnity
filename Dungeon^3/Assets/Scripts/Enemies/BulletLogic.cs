@@ -14,7 +14,7 @@ public class BulletLogic : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision col) {
-		Debug.Log("colliding with: " + col.gameObject);
+		//Debug.Log("colliding with: " + col.gameObject);
 		if(col.gameObject.tag == "Player") {
 			GameObject.Find("Health").gameObject.GetComponent<PlayerHealth>().UpdateHealth(-1);
 			Destroy(gameObject);

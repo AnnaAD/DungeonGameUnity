@@ -18,30 +18,29 @@ public class GreenSlime : Enemy {
 			transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
 			lastSeen = player.transform.position;
 			checkedLastSeen = false;
-			Debug.Log("seen");
+
 		
 		} else {
 			//TODO: Fix this as it never actually gets to the lastSeen point
-			if(transform.position == lastSeen) {
+			if(Vector3.Distance(transform.position,lastSeen) < 3f) {
 				checkedLastSeen = true;
 			}
+
+			Debug.Log("distance to last seen: " + Vector3.Distance(transform.position,lastSeen));
 
 			if(checkedLastSeen == false) {
 				transform.LookAt(lastSeen);
 				rBody.velocity = transform.forward * 3;
 				transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
 			} else {
-				int mode = Mathf.RoundToInt(Random.value * 2);
-				//TODO: Better Idle Behavior with turning and wall bouncing
+				//idle mode
+				Debug.Log("idle: " + name);
+				rBody.velocity = transform.forward * 1;
 
-				if(mode == 0) {
-					rBody.velocity =  Vector3.zero;
+				if(Physics.Raycast(transform.position, transform.forward, 3f)) {
+					rBody.AddTorque(new Vector3(0,3,0));
+					Debug.Log("turning?");
 				}
-
-				if(mode == 1) {
-					rBody.velocity = transform.forward * 1;
-				}
-					
 					
 			}
 
