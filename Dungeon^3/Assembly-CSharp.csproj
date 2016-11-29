@@ -45,21 +45,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\PlayerXP.cs" />
      <Compile Include="Assets\Scripts\Enemies\BulletLogic.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\GreenSlime.cs" />
      <Compile Include="Assets\Scripts\Enemies\PurpleSlime.cs" />
      <Compile Include="Assets\Scripts\GenerateDungeon.cs" />
+     <Compile Include="Assets\Scripts\LayerManager.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuScript.cs" />
      <Compile Include="Assets\Scripts\Player\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerXP.cs" />
+     <Compile Include="Assets\Scripts\UImanager.cs" />
      <Compile Include="Assets\Scripts\Weapons\ArrowBehavior.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordAnimation.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordController.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordSwing.cs" />
-     <Compile Include="Assets\UImanager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
