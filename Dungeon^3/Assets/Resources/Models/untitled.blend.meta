@@ -1,42 +1,32 @@
 fileFormatVersion: 2
-guid: d80e397cdaeda44c7a12a109d66a158a
-timeCreated: 1480382131
+guid: fc227de89396849ca83b2adedfcc8eff
+timeCreated: 1480718864
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Cube
-    100004: Cube_001
-    100006: ChestBody
-    100008: ChestTop
-    100010: Lock
-    100012: SidePieces
-    400000: //RootNode
-    400002: Cube
-    400004: Cube_001
-    400006: ChestBody
-    400008: ChestTop
-    400010: Lock
-    400012: SidePieces
-    2300000: Cube
-    2300002: Cube_001
-    2300004: ChestBody
-    2300006: ChestTop
-    2300008: Lock
-    2300010: SidePieces
-    3300000: Cube
-    3300002: Cube_001
-    3300004: ChestBody
-    3300006: ChestTop
-    3300008: Lock
-    3300010: SidePieces
-    4300000: Cube_001
-    4300002: Cube
-    4300004: Lock
-    4300006: SidePieces
-    4300008: ChestTop
-    4300010: ChestBody
+    100000: Cork
+    100002: Glass
+    100004: Liquid
+    100006: Neck
+    100008: //RootNode
+    400000: Cork
+    400002: Glass
+    400004: Liquid
+    400006: Neck
+    400008: //RootNode
+    2300000: Cork
+    2300002: Glass
+    2300004: Liquid
+    2300006: Neck
+    3300000: Cork
+    3300002: Glass
+    3300004: Liquid
+    3300006: Neck
+    4300000: Liquid
+    4300002: Cork
+    4300004: Neck
+    4300006: Glass
     7400000: Default Take
     9500000: //RootNode
   materials:
