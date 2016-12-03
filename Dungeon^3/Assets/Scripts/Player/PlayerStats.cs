@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerStats : MonoBehaviour {
 
+	public int level;
 	public int healthBoost;
 	public int speed;
 	public int vitality;
@@ -12,7 +13,8 @@ public class PlayerStats : MonoBehaviour {
 
 	//TODO: Assign statistics (i.e. speed, strength, etc. and have them incremented when character levels up)
 	public void LevelUp(){
-
+		Debug.Log("leveled up");
+		level++;
 	}
 
 	public void updateHealthBoost(int val) {

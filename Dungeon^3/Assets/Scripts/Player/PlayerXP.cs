@@ -27,6 +27,7 @@ public class PlayerXP : MonoBehaviour {
 			Player.GetComponent<PlayerStats>().LevelUp();
 			xp = xp+xpGain - maxXP;
 			maxXP = Mathf.RoundToInt(maxXP * xpFactor);
+			xpFactor++;
 		}
 		xpDisplay.text = "XP: " + xp + "/" + maxXP;	
 	}

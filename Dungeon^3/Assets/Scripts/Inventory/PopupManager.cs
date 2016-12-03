@@ -18,7 +18,7 @@ public class PopupManager : MonoBehaviour {
 			inventoryOpen = false;
 
 		} else {
-			inventoryButton.GetComponent<Transform> ().Translate(new Vector3 (0f, 180.4f, 0f));
+			inventoryButton.GetComponent<Transform>().Translate(new Vector3 (0f, 180.4f, 0f));
 
 			inventoryBackground.SetActive (true);
 			inventoryOpen = true;
