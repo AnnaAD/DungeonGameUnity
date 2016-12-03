@@ -22,13 +22,14 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 - [ ] Add dungeon generation? / Room progression
   - [ ] Data Persistence to Save stuff between Rooms
 - [ ] Add different monsters
-- [ ] Inventory
-- [ ] Items
+- [X] Inventory
+- [X] Items(Need Many More, but Framework is there)
+- [ ] Chests/Loot Bags
 - [ ] More Weapons
 - [ ] Menu/Settings
 - [ ] Add Red Vision at Low Health
 - [ ] Magic/Mana and Spells
-
+- [ ] Plot
 ##Things to Consider
 
 ###Levelling
@@ -41,13 +42,6 @@ Should players be allowed to save?
  - [ ] Whenever you quit to title
  - [ ] Autosave
  Save should clear on death
- 
-###Inventory
-How should the inventory work?
- - [ ] Full pause game inventory with lots of slots
- - [ ] Only equipped weapons
- - [ ] Small inventory that is onscreen like in ROTMG (Could be on a slider).
-  
 ##Extensions to the Game Once Finished
 - [ ] Build your own level
 - [ ] Multiplayer (Costs $$$)
@@ -55,3 +49,5 @@ How should the inventory work?
 - [ ] Classes
 - [ ] Customizable Color
 
+##Plot Ideas
+1)The cube (our main character) has been living in a world  of spheres. Because he is a cube, he is socially outcast. Eventually, he screws something up (maybe breaks something important) and they banish him into a dungeon that nobody has ever came back from. He fights his way through a horde of slime and monsters (the game), eventually, when he kills a big boss slime, he realizes that the slimes were really cubes like him, and that the big boss was his father. 
