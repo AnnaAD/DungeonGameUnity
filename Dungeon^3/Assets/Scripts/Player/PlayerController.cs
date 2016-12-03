@@ -15,8 +15,6 @@ public class PlayerController : MonoBehaviour {
 	public float speed = 5.0F;
 	public float arrowSpeed = 9f;
 	private CharacterController controller;
-	private GameObject itemSlot;
-	private Item testsword;
 
 	void Start() {
 		worldManager = GameObject.Find ("WorldManager");
@@ -24,9 +22,6 @@ public class PlayerController : MonoBehaviour {
 		cam = Camera.main.transform;
 		camForward = Vector3.Scale (cam.forward, new Vector3 (1, 0, 1)).normalized;
 		controller = GetComponent<CharacterController> ();
-		itemSlot = GameObject.Find ("Slot (1)");
-		testsword = new Sword (1, itemSlot);
-
 	}
 
 	void Update() {

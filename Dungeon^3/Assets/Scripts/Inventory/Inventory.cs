@@ -1,15 +1,57 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 public class Inventory : MonoBehaviour {
-
+	public GameObject[] slots;
+	public Item[] items;
+	private bool down;
+	private int slotDragged;
+	private Transform startParent;
 	// Use this for initialization
 	void Start () {
-	
+		startParent = null;
+		down = false;
+		slots = new GameObject[12];
+		for (int i = 1; i <= slots.Length; i++) {
+			slots [i-1] = GameObject.Find ("Slot (" + i+ ")");
+		}
+		Debug.Log (slots);
+		items = new Item[12];
+		items[0] = new Sword (0, slots [0]);
+		items [1] = new Bow (0, slots [1]);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
+		if (slots [0].GetComponent<ClickDetection> ().isDown) {
+			down = true;
+			startParent = slots[0].GetComponent<Transform>();
+			items [0].gameObject.GetComponent<Transform> ().parent = GameObject.Find ("Canvas").GetComponent<Transform> ();
+			items [0].gameObject.GetComponent<Transform> ().position = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
+
+		} else if (!slots [0].GetComponent<ClickDetection> ().isDown && down) {
+			down = false;
+			int slot = checkSlots (items [0].gameObject, 20);
+			if (slot != -1) {
+				items [0].gameObject.GetComponent<Transform> ().parent = slots [slot].GetComponent<Transform> ();
+
+			} else {
+				print ("Not in inventory slot");
+				items [0].gameObject.GetComponent<Transform>().parent = startParent;
+			}
+			items [0].gameObject.GetComponent<Transform> ().localPosition = new Vector2 (0f, 0f);
+		}
+	}
+
+	private int checkSlots(GameObject item,int maxDistance)
+	{
+		for (int i = 0; i < slots.Length; i++) {
+			Transform trans1 = slots [i].GetComponent<Transform> ();
+			Transform trans2 = item.GetComponent<Transform> ();
+			if (Mathf.Abs (trans1.position.x - trans2.position.x) < maxDistance && Mathf.Abs (trans1.position.y - trans2.position.y) < maxDistance) {
+				return(i);
+			}
+		}
+		return -1;
 	}
 }

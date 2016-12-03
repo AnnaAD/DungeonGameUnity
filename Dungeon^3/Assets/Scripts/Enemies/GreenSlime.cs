@@ -26,7 +26,7 @@ public class GreenSlime : Enemy {
 				checkedLastSeen = true;
 			}
 
-			Debug.Log("distance to last seen: " + Vector3.Distance(transform.position,lastSeen));
+			//Debug.Log("distance to last seen: " + Vector3.Distance(transform.position,lastSeen));
 
 			if(checkedLastSeen == false) {
 				transform.LookAt(lastSeen);

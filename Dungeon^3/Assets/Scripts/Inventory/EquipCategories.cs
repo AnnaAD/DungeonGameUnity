@@ -36,7 +36,7 @@ public class Bow : Equipment {
 	public void OnEnable()
 	{
 		sprites = Resources.LoadAll<Sprite>("Images/Bows");
-		damages = new float[] {};
+		damages = new float[] {2f};
 	}
 
 }
