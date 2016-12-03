@@ -1,32 +1,27 @@
 fileFormatVersion: 2
-guid: fc227de89396849ca83b2adedfcc8eff
-timeCreated: 1480718864
+guid: 4b3b346eea40e4fa2948c1488ea204fb
+timeCreated: 1480794697
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Cork
-    100002: Glass
-    100004: Liquid
-    100006: Neck
-    100008: //RootNode
-    400000: Cork
-    400002: Glass
-    400004: Liquid
-    400006: Neck
-    400008: //RootNode
-    2300000: Cork
-    2300002: Glass
-    2300004: Liquid
-    2300006: Neck
-    3300000: Cork
-    3300002: Glass
-    3300004: Liquid
-    3300006: Neck
-    4300000: Liquid
-    4300002: Cork
-    4300004: Neck
-    4300006: Glass
+    100000: Cube
+    100002: Cube_001
+    100004: Cube_002
+    100006: //RootNode
+    400000: Cube
+    400002: Cube_001
+    400004: Cube_002
+    400006: //RootNode
+    2300000: Cube
+    2300002: Cube_001
+    2300004: Cube_002
+    3300000: Cube
+    3300002: Cube_001
+    3300004: Cube_002
+    4300000: Cube_002
+    4300002: Cube_001
+    4300004: Cube
     7400000: Default Take
     9500000: //RootNode
   materials:
