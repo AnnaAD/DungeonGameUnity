@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\GreenSlime.cs" />
      <Compile Include="Assets\Scripts\Enemies\PurpleSlime.cs" />
+     <Compile Include="Assets\Scripts\FaceCamera.cs" />
      <Compile Include="Assets\Scripts\GenerateDungeon.cs" />
      <Compile Include="Assets\Scripts\Inventory\Consumable.cs" />
      <Compile Include="Assets\Scripts\Inventory\EquipCategories.cs" />

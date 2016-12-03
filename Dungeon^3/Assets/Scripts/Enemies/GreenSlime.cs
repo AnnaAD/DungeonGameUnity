@@ -49,21 +49,6 @@ public class GreenSlime : Enemy {
 		//Debug.Log(checkedLastSeen);
 	}
 
-	private bool CanSeePlayer(){
-
-		RaycastHit hit;
-		if(Physics.Linecast(transform.position, player.transform.position, out hit)) {
-			if(hit.collider.gameObject.name == "Player") {
-				return true;
-			} else {
-				return false;
-			}
-		}
-
-		Debug.Log("This shouldn't happen...");
-		return false;
-	}
-
 	void OnCollsionEnter(Collision col) {
 		Debug.Log("turn");
 		if(!checkedLastSeen) {
