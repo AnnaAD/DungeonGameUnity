@@ -30,7 +30,9 @@ public class PurpleSlime : Enemy {
 
 		if(counter > timeBetweenShots) {
 			counter = 0;
-			Shoot();
+			if(CanSeePlayer()) {
+				Shoot();
+			}
 		}
 
 
@@ -50,4 +52,6 @@ public class PurpleSlime : Enemy {
 		// Destroy the bullet after 2 seconds
 		Destroy(bullet, 1.5f); 
 	}
+
+
 }

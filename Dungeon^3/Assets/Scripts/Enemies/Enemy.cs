@@ -44,4 +44,19 @@ public class Enemy : MonoBehaviour {
 		playerXP.GetComponent<PlayerXP>().addXP(xp);
 		Destroy(gameObject);
 	}
+
+	public bool CanSeePlayer(){
+
+		RaycastHit hit;
+		if(Physics.Linecast(transform.position, player.transform.position, out hit)) {
+			if(hit.collider.gameObject.name == "Player") {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		Debug.Log("This shouldn't happen...");
+		return false;
+	}
 }
