@@ -16,7 +16,7 @@ public class SwordController : MonoBehaviour {
 	}
     void OnCollisionEnter(Collision col) {
 
-        if (col.gameObject.tag == "Enemy" && pivotPoint.GetComponent<SwordSwing>().isStabbing) {
+        if (col.gameObject.tag == "Enemy" && pivotPoint.GetComponent<SwordAnimation>().isSwinging) {
 			col.gameObject.GetComponent<Enemy>().Damage(4);
         }
     }
