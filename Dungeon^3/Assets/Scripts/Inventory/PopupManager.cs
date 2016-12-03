@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InventoryManager : MonoBehaviour {
+public class PopupManager : MonoBehaviour {
 	public static bool inventoryOpen;
 	public GameObject inventoryBackground;
 	public GameObject inventoryButton;
