@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 public class PlayerXP : MonoBehaviour {
+	public int level;
 	private Text xpDisplay;
 	public int maxXP;
 	private int xp;
@@ -19,12 +20,11 @@ public class PlayerXP : MonoBehaviour {
 
 	}
 
-	public void addXP(int xpGain)
-	{
+	public void addXP(int xpGain) {
 		if (xpGain + xp < maxXP) {
 			xp += xpGain;
 		} else {
-			Player.GetComponent<PlayerController>().LevelUp();
+			Player.GetComponent<PlayerStats>().LevelUp();
 			xp = xp+xpGain - maxXP;
 			maxXP = Mathf.RoundToInt(maxXP * xpFactor);
 		}

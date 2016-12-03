@@ -10,14 +10,9 @@ public class PlayerStats : MonoBehaviour {
 	public int swordsmanship;
 	public int bowmanship;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	//TODO: Assign statistics (i.e. speed, strength, etc. and have them incremented when character levels up)
+	public void LevelUp(){
+
 	}
 
 	public void updateHealthBoost(int val) {
