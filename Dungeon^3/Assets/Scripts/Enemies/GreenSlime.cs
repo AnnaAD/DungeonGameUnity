@@ -33,8 +33,9 @@ public class GreenSlime : Enemy {
 				transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
 			} else {
 				//idle mode
-				Debug.Log("idle: " + name);
+				//Debug.Log("idle: " + name);
 				rBody.velocity = transform.forward * 1;
+				transform.Rotate(new Vector3(0,(Random.value * 2)-1,0));
 
 				/* if(Physics.Raycast(transform.position, transform.forward, 3f)) {
 					transform.Rotate(new Vector3(0,15,0));
@@ -65,6 +66,10 @@ public class GreenSlime : Enemy {
 	}
 
 	void OnCollsionEnter(Collision col) {
-		transform.Rotate(new Vector3(0,15,0));
+		Debug.Log("turn");
+		if(!checkedLastSeen) {
+			transform.Rotate(new Vector3(0,90,0));
+			rBody.AddForce(transform.forward * 5);
+		}
 	}
 }
