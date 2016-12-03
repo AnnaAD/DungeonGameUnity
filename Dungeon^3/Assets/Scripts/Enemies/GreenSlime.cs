@@ -8,7 +8,6 @@ public class GreenSlime : Enemy {
 	// Update is called once per frame
 	void Update () {
 
-		RaycastHit hit;
 		Debug.DrawRay(transform.position, transform.forward);
 		seen = CanSeePlayer();
 
