@@ -8,8 +8,8 @@ public class Inventory : MonoBehaviour {
 	private Transform startParent;
 	// Use this for initialization
 	void Start () {
-		startParent = null;
-		down = false;
+		slotDragged = -1;
+
 		slots = new GameObject[12];
 		for (int i = 1; i <= slots.Length; i++) {
 			slots [i-1] = GameObject.Find ("Slot (" + i+ ")");
@@ -22,24 +22,35 @@ public class Inventory : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if (slots [0].GetComponent<ClickDetection> ().isDown) {
-			down = true;
-			startParent = slots[0].GetComponent<Transform>();
-			items [0].gameObject.GetComponent<Transform> ().parent = GameObject.Find ("Canvas").GetComponent<Transform> ();
-			items [0].gameObject.GetComponent<Transform> ().position = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
 
-		} else if (!slots [0].GetComponent<ClickDetection> ().isDown && down) {
-			down = false;
-			int slot = checkSlots (items [0].gameObject, 20);
+		if (slotDragged!=-1&&slots [slotDragged].GetComponent<ClickDetection> ().isDown) {
+			items [slotDragged].gameObject.GetComponent<Transform> ().position = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
+		} else if (slotDragged!=-1&&!slots [slotDragged].GetComponent<ClickDetection> ().isDown) {
+			int slot = checkSlots (items [slotDragged].gameObject, 20);
 			if (slot != -1) {
-				items [0].gameObject.GetComponent<Transform> ().parent = slots [slot].GetComponent<Transform> ();
-
+				items [slotDragged].gameObject.GetComponent<Transform> ().parent = slots [slot].GetComponent<Transform> ();
+				Item temp = items [slot];
+				items [slot] = items [slotDragged];
+				items [slotDragged] = temp;
+				if(items[slotDragged]!=null){
+					items [slotDragged].gameObject.GetComponent<Transform> ().parent = slots [slotDragged].GetComponent<Transform> ();
+				}
+				items [slot].gameObject.GetComponent<Transform> ().localPosition = new Vector2 (0f, 0f);
 			} else {
-				print ("Not in inventory slot");
-				items [0].gameObject.GetComponent<Transform>().parent = startParent;
+				items [slotDragged].gameObject.GetComponent<Transform>().parent = slots[slotDragged].GetComponent<Transform>();
+				items [slotDragged].gameObject.GetComponent<Transform> ().localPosition = new Vector2 (0f, 0f);
 			}
-			items [0].gameObject.GetComponent<Transform> ().localPosition = new Vector2 (0f, 0f);
+			slotDragged = -1;
+		}else{
+			for(int i=0;i<slots.Length;i++)
+			{
+				if (items[i]!=null&&slots [i].GetComponent<ClickDetection> ().isDown) {
+					slotDragged = i;
+					items [slotDragged].gameObject.GetComponent<Transform> ().parent = GameObject.Find ("Canvas").GetComponent<Transform> ();
+					return;
+				}
+
+			}
 		}
 	}
 
