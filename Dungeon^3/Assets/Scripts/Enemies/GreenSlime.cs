@@ -18,11 +18,10 @@ public class GreenSlime : Enemy {
 			transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
 			lastSeen = player.transform.position;
 			checkedLastSeen = false;
-
 		
 		} else {
 			//TODO: Fix this as it never actually gets to the lastSeen point
-			if(Vector3.Distance(transform.position,lastSeen) < 3f) {
+			if(Vector3.Distance(transform.position,lastSeen) < 5f) {
 				checkedLastSeen = true;
 			}
 
@@ -37,10 +36,10 @@ public class GreenSlime : Enemy {
 				Debug.Log("idle: " + name);
 				rBody.velocity = transform.forward * 1;
 
-				if(Physics.Raycast(transform.position, transform.forward, 3f)) {
-					rBody.AddTorque(new Vector3(0,3,0));
+				/* if(Physics.Raycast(transform.position, transform.forward, 3f)) {
+					transform.Rotate(new Vector3(0,15,0));
 					Debug.Log("turning?");
-				}
+				} */
 					
 			}
 
@@ -63,5 +62,9 @@ public class GreenSlime : Enemy {
 
 		Debug.Log("This shouldn't happen...");
 		return false;
+	}
+
+	void OnCollsionEnter(Collision col) {
+		transform.Rotate(new Vector3(0,15,0));
 	}
 }
