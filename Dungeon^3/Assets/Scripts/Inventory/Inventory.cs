@@ -14,7 +14,6 @@ public class Inventory : MonoBehaviour {
 		for (int i = 1; i <= slots.Length; i++) {
 			slots [i-1] = GameObject.Find ("Slot (" + i+ ")");
 		}
-		Debug.Log (slots);
 		items = new Item[12];
 		items[0] = new Sword (0, slots [0]);
 		items [1] = new Bow (0, slots [1]);
@@ -28,7 +27,7 @@ public class Inventory : MonoBehaviour {
 		} else if (slotDragged!=-1&&!slots [slotDragged].GetComponent<ClickDetection> ().isDown) {
 			int slot = checkSlots (items [slotDragged].gameObject, 20);
 			if (slot != -1) {
-				items [slotDragged].gameObject.GetComponent<Transform> ().parent = slots [slot].GetComponent<Transform> ();
+				items [slotDragged].gameObject.GetComponent<Transform> ().SetParent(slots [slot].GetComponent<Transform> (),false);
 				Item temp = items [slot];
 				items [slot] = items [slotDragged];
 				items [slotDragged] = temp;
@@ -37,7 +36,7 @@ public class Inventory : MonoBehaviour {
 				}
 				items [slot].gameObject.GetComponent<Transform> ().localPosition = new Vector2 (0f, 0f);
 			} else {
-				items [slotDragged].gameObject.GetComponent<Transform>().parent = slots[slotDragged].GetComponent<Transform>();
+				items [slotDragged].gameObject.GetComponent<Transform>().SetParent(slots[slotDragged].GetComponent<Transform>(),false);
 				items [slotDragged].gameObject.GetComponent<Transform> ().localPosition = new Vector2 (0f, 0f);
 			}
 			slotDragged = -1;
@@ -46,7 +45,7 @@ public class Inventory : MonoBehaviour {
 			{
 				if (items[i]!=null&&slots [i].GetComponent<ClickDetection> ().isDown) {
 					slotDragged = i;
-					items [slotDragged].gameObject.GetComponent<Transform> ().parent = GameObject.Find ("Canvas").GetComponent<Transform> ();
+					items [slotDragged].gameObject.GetComponent<Transform> ().SetParent (GameObject.Find ("Canvas").GetComponent<Transform> (), true);
 					return;
 				}
 
