@@ -8,10 +8,12 @@ public class Item : ScriptableObject {
 	}
 	public Item(GameObject inventorySlotObject)
 	{
-		gameObject = Object.Instantiate(GameObject.Find("ItemObject"));
+		
+		gameObject = Object.Instantiate(Resources.Load<GameObject>("prefabs/ItemObject"));
 		gameObject.GetComponent<Transform>().SetParent (inventorySlotObject.GetComponent<Transform>());
+		gameObject.GetComponent<Transform> ().localPosition = new Vector3 (0f, 0f, 0f);
 	}
-	// Use this for initialization
+
 	public GameObject getGameObject()
 	{
 		return gameObject;

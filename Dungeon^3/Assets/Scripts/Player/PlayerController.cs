@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 		camForward = Vector3.Scale (cam.forward, new Vector3 (1, 0, 1)).normalized;
 		controller = GetComponent<CharacterController> ();
 		itemSlot = GameObject.Find ("Slot (1)");
-		testsword = new Armor (0, itemSlot);
+		testsword = new Sword (1, itemSlot);
 
 	}
 
