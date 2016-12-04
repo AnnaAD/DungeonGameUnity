@@ -45,13 +45,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DistanceDetection.cs" />
-     <Compile Include="Assets\Scripts\ChestController.cs" />
      <Compile Include="Assets\Scripts\Enemies\BulletLogic.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\GreenSlime.cs" />
      <Compile Include="Assets\Scripts\Enemies\PurpleSlime.cs" />
-     <Compile Include="Assets\Scripts\GenerateDungeon.cs" />
      <Compile Include="Assets\Scripts\Inventory\ClickDetection.cs" />
      <Compile Include="Assets\Scripts\Inventory\Consumable.cs" />
      <Compile Include="Assets\Scripts\Inventory\EquipCategories.cs" />
@@ -60,6 +57,9 @@
      <Compile Include="Assets\Scripts\Inventory\Item.cs" />
      <Compile Include="Assets\Scripts\Inventory\PopupManager.cs" />
      <Compile Include="Assets\Scripts\LayerManager.cs" />
+     <Compile Include="Assets\Scripts\Level\ChestController.cs" />
+     <Compile Include="Assets\Scripts\Level\DistanceDetection.cs" />
+     <Compile Include="Assets\Scripts\Level\GenerateDungeon.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuScript.cs" />
      <Compile Include="Assets\Scripts\Player\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
