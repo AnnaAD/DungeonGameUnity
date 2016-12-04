@@ -32,7 +32,7 @@ public class Inventory : MonoBehaviour {
 				items [slot] = items [slotDragged];
 				items [slotDragged] = temp;
 				if(items[slotDragged]!=null){
-					items [slotDragged].gameObject.GetComponent<Transform> ().parent = slots [slotDragged].GetComponent<Transform> ();
+					items [slotDragged].gameObject.GetComponent<Transform> ().SetParent(slots [slotDragged].GetComponent<Transform> (),false);
 				}
 				items [slot].gameObject.GetComponent<Transform> ().localPosition = new Vector2 (0f, 0f);
 			} else {

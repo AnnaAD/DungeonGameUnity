@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PopupManager : MonoBehaviour {
-	public static bool inventoryOpen;
+	public bool inventoryOpen;
 	public GameObject inventoryBackground;
 	public GameObject inventoryButton;
 	public void Start(){
