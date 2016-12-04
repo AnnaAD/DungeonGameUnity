@@ -17,7 +17,11 @@ public class DistanceDetection : MonoBehaviour {
 		
 		Transform trans1 = player.GetComponent<Transform>();
 		Transform trans2 = trapdoor.GetComponent<Transform>();
+<<<<<<< Updated upstream
 		if (Mathf.Abs (trans1.position.x - trans2.position.x) < triggerDistance && Mathf.Abs (trans1.position.z - trans2.position.z)<triggerDistance) {
+=======
+		if (Vector3.Distance(trans1.position,trans2.position)<triggerDistance) {
+>>>>>>> Stashed changes
 			animator.SetTrigger ("open");
 		}
 	}
