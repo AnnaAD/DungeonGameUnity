@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEditor.SceneManagement;
 using System.Collections;
 
 public class MenuScript : MonoBehaviour {
 
 	public void Play() {
 		Debug.Log("clicked play");
-		Application.LoadLevel("dungeon");
+		EditorSceneManager.LoadScene("dungeon");
 	}
 
 	public void Endgame() {

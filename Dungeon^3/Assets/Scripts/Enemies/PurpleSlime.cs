@@ -8,7 +8,7 @@ public class PurpleSlime : Enemy {
 	public float timeBetweenShots;
 	private float counter;
 
-	public void loadResources() {
+	public override void loadResources() {
 		counter = 0;
 	}
 

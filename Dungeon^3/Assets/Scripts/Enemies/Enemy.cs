@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour {
 		loadResources();
 	}
 
-	public void loadResources(){}
+	public virtual void loadResources(){}
 	
 	// Update is called once per frame
 	void Update () {
