@@ -17,7 +17,7 @@ public class DistanceDetection : MonoBehaviour {
 		
 		Transform trans1 = player.GetComponent<Transform>();
 		Transform trans2 = trapdoor.GetComponent<Transform>();
-		if (Mathf.Abs (trans1.position.x - trans2.position.x) < triggerDistance && Mathf.Abs (trans1.position.z - trans2.position.z)<triggerDistance) {
+		if (Vector3.Distance(trans1.position,trans2.position)<triggerDistance) {
 			animator.SetTrigger ("open");
 		}
 	}
