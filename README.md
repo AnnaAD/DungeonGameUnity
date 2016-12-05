@@ -25,6 +25,7 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 - [X] Inventory
 - [X] Items(Need Many More, but Framework is there)
 - [ ] Chests/Loot Bags
+  - [ ] Items dropped by monsters
 - [ ] More Weapons
 - [ ] Menu/Settings
 - [ ] Add Red Vision at Low Health
@@ -51,8 +52,11 @@ Save should clear on death
 - [ ] Classes
 - [ ] Customizable Color
 - [ ] Mobile Port
-    -[ ] Free version with 10 levels and a boss
-    -[ ] $0.99 version with unlimited levels, all monsters, all items, and player customizability.
+  - [ ] Free version with 10 levels and a boss
+  - [ ] $0.99 version with unlimited levels, all monsters, all items, and player customizability.
 
 ##Plot Ideas
-1)The cube (our main character) has been living in a world  of spheres. Because he is a cube, he is socially outcast. Eventually, he screws something up (maybe breaks something important) and they banish him into a dungeon that nobody has ever came back from. He fights his way through a horde of slime and monsters (the game), eventually, when he kills a big boss slime, he realizes that the slimes were really cubes like him, and that the big boss was his father. 
+
+1) The cube (our main character) has been living in a world  of spheres. Because he is a cube, he is socially outcast. Eventually, he screws something up (maybe breaks something important) and they banish him into a dungeon that nobody has ever came back from. He fights his way through a horde of slime and monsters (the game), eventually, when he kills a big boss slime, he realizes that the slimes were really cubes like him, and that the big boss was his father. 
+
+2) Plot points are conveyed through dropped notes in the level.
