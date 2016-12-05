@@ -30,6 +30,7 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 - [ ] Add Red Vision at Low Health
 - [ ] Magic/Mana and Spells
 - [ ] Plot
+
 ##Things to Consider
 
 ###Levelling
@@ -41,13 +42,17 @@ Should players be allowed to save?
  - [ ] Save & Quit Button Between Levels
  - [ ] Whenever you quit to title
  - [ ] Autosave
- Save should clear on death
+Save should clear on death
+
 ##Extensions to the Game Once Finished
 - [ ] Build your own level
 - [ ] Multiplayer (Costs $$$)
 - [ ] Achievements
 - [ ] Classes
 - [ ] Customizable Color
+- [ ] Mobile Port
+    -[ ] Free version with 10 levels and a boss
+    -[ ] $0.99 version with unlimited levels, all monsters, all items, and player customizability.
 
 ##Plot Ideas
 1)The cube (our main character) has been living in a world  of spheres. Because he is a cube, he is socially outcast. Eventually, he screws something up (maybe breaks something important) and they banish him into a dungeon that nobody has ever came back from. He fights his way through a horde of slime and monsters (the game), eventually, when he kills a big boss slime, he realizes that the slimes were really cubes like him, and that the big boss was his father. 
