@@ -15,13 +15,16 @@ public class PlayerController : MonoBehaviour {
 	public float speed = 5.0F;
 	public float arrowSpeed = 9f;
 	private CharacterController controller;
+	private Animator animator;
 
 	void Start() {
 		worldManager = GameObject.Find ("WorldManager");
 		pivotPoint = GameObject.Find ("Pivot point");
 		cam = Camera.main.transform;
 		camForward = Vector3.Scale (cam.forward, new Vector3 (1, 0, 1)).normalized;
-		controller = GetComponent<CharacterController> ();
+		controller = GetComponent<CharacterController>();
+		animator = GetComponent<Animator>();
+		animator.enabled = false;
 	}
 
 	void Update() {
@@ -72,5 +75,8 @@ public class PlayerController : MonoBehaviour {
 		Destroy(bullet, 1.5f);  
 	}
 
-		
+	public void Fall() {
+		animator.enabled = true;
+		animator.SetTrigger("Fall");
+	}
 }

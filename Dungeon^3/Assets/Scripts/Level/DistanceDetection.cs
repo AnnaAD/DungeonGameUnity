@@ -9,7 +9,7 @@ public class DistanceDetection : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
-		player = GameObject.Find ("Player");
+		player = GameObject.Find("Player");
 	}
 	
 	// Update is called once per frame
@@ -18,7 +18,8 @@ public class DistanceDetection : MonoBehaviour {
 		Transform trans1 = player.GetComponent<Transform>();
 		Transform trans2 = trapdoor.GetComponent<Transform>();
 		if (Vector3.Distance(trans1.position,trans2.position)<triggerDistance) {
-			animator.SetTrigger ("open");
+			//Debug.Log("open");
+			animator.SetTrigger("open");
 		}
 	}
 }

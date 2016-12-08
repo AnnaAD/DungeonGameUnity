@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerXP.cs" />
+     <Compile Include="Assets\Scripts\TrapdoorTrigger.cs" />
      <Compile Include="Assets\Scripts\UImanager.cs" />
      <Compile Include="Assets\Scripts\Weapons\ArrowBehavior.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordAnimation.cs" />
