@@ -7,7 +7,7 @@ public class TrapdoorTrigger : MonoBehaviour {
 		Debug.Log("colliding with: " + col.gameObject);
 		if(col.gameObject.tag == "Player") {
 			Debug.Log("player");
-			col.gameObject.GetComponent<PlayerController>().Fall();
+			//col.gameObject.GetComponent<PlayerController>().Fall();
 		}
 	}
 }
