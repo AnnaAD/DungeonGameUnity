@@ -30,11 +30,11 @@ Becareful with editing stuff because this is a Unity project and weird things ha
   - [ ] Items dropped by monsters
 - [ ] More Weapons and Items
 - [X] Menu/Settings
-  -[X] Pause Menu
-  -[ ] Options
-  -[X] Start Menu
-  -[ ]Play Menu?
-  -[ ]Death Menu
+  - [X] Pause Menu
+  - [ ] Options
+  - [X] Start Menu
+  - [ ]Play Menu?
+  - [ ]Death Menu
 - [ ] Add Red Vision at Low Health (Maybe we don't need this, it might look weird)
 - [ ] Plot
 - [ ] Sprucing up Looks and Making it look more professional (Models, textures, lighting, rendering, animations, particles, etc.)
