@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 	public float speed = 5.0F;
 	public float arrowSpeed = 9f;
 	private CharacterController controller;
+	private Animator animator;
 
 	void Start() {
 		worldManager = GameObject.Find ("WorldManager");
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour {
 		cam = Camera.main.transform;
 		camForward = Vector3.Scale (cam.forward, new Vector3 (1, 0, 1)).normalized;
 		controller = GetComponent<CharacterController> ();
+		animator = GetComponent<Animator>();
+		animator.enabled = false;
 	}
 
 	void Update() {
@@ -55,7 +58,14 @@ public class PlayerController : MonoBehaviour {
 				pivotPoint.GetComponent<SwordAnimation>().Swing();
 			}
 			transform.position = new Vector3 (transform.position.x, 0.5f, transform.position.z);
+
 		}
+	}
+
+	public void Fall() {
+		Debug.Log("falling");
+		animator.enabled = true;
+		animator.SetTrigger("Fall");
 	}
 
 	public void Fire() {
