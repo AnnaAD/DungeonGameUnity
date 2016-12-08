@@ -16,9 +16,11 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 - [X] Add sword combat
 - [X] Add damage detection for slime monster
 - [X] Add damage for player/slime attacks
-- [X] Add health/dying
+- [X] Add health
+  - [ ] Dying
 - [X] Add XP
 - [ ] Add Levelling Up and Character Stats
+  - [ ]Level Up Animation
 - [ ] Add dungeon generation? / Room progression
   - [ ] Data Persistence to Save stuff between Rooms
 - [ ] Add different monsters
@@ -26,16 +28,18 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 - [X] Items(Need Many More, but Framework is there)
 - [ ] Chests/Loot Bags
   - [ ] Items dropped by monsters
-- [ ] More Weapons
-- [ ] Menu/Settings
-- [ ] Add Red Vision at Low Health
-- [ ] Magic/Mana and Spells
+- [ ] More Weapons and Items
+- [X] Menu/Settings
+  -[X] Pause Menu
+  -[ ] Options
+  -[X] Start Menu
+  -[ ]Play Menu?
+  -[ ]Death Menu
+- [ ] Add Red Vision at Low Health (Maybe we don't need this, it might look weird)
 - [ ] Plot
-
+- [ ] Sprucing up Looks and Making it look more professional (Models, textures, lighting, rendering, animations, particles, etc.)
+- [ ] Tutorial
 ##Things to Consider
-
-###Levelling
-Should all stats be upgraded, or only allow player to choose a few
 
 ###Saving
 Should players be allowed to save?
@@ -46,7 +50,10 @@ Should players be allowed to save?
 Save should clear on death
 
 ##Extensions to the Game Once Finished
+- [ ] First Person View
 - [ ] Build your own level
+- [ ] Special Skill/Power Tree
+- [ ] Magic/Mana and Spells
 - [ ] Multiplayer (Costs $$$)
 - [ ] Achievements
 - [ ] Classes
