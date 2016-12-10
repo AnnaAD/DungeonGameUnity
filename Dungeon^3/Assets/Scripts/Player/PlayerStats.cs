@@ -11,12 +11,14 @@ public class PlayerStats : MonoBehaviour {
 	public int swordsmanship;
 	public int bowmanship;
 	public GameObject StatDisplay;
+	public GameObject LevelUpDisplay;
 
 	//TODO: Assign statistics (i.e. speed, strength, etc. and have them incremented when character levels up)
 	public void LevelUp(){
 		Debug.Log("leveled up");
 		level++;
 		StatDisplay.GetComponent<StatUI>().updateStats();
+		LevelUpDisplay.SetActive(true);
 	}
 
 	public void updateHealthBoost(int val) {
