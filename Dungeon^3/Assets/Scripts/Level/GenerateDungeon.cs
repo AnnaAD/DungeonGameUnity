@@ -13,7 +13,6 @@ public class GenerateDungeon : MonoBehaviour {
 	public int maxRooms;
 	public float fadeMultiplier;
 
-	private int counter;
 
 	//X++ is north
 	//X-- is south
@@ -21,7 +20,6 @@ public class GenerateDungeon : MonoBehaviour {
 	//Z-- is east
 
 	void Start () {
-		counter = 0;
 		Generate();
 	}
 	

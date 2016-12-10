@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour {
 		loadResources();
 	}
 
-	public void loadResources(){}
+	public virtual void loadResources(){}
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour {
 
 	public void Damage(int number) {
 		health -= number;
-		Debug.Log(health);
+		//Debug.Log(health);
 		if (health <= 0) {
 			GetComponent<Animator>().SetTrigger("Die");
 		}

@@ -5,8 +5,8 @@ public class Equipment : Item {
 	private bool isEquipped;
 	public int tier;
 	public string type;
-	public Equipment (int tier, GameObject inventorySlotObject) : base (inventorySlotObject)
-	{
+
+	public Equipment (int tier, GameObject inventorySlotObject) : base (inventorySlotObject) {
 		this.tier = tier;
 		type = "Equipment";
 

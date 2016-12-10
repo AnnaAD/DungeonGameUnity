@@ -2,11 +2,9 @@
 using System.Collections;
 
 public class SwordController : MonoBehaviour {
-    BoxCollider boxcollider;
     GameObject pivotPoint;
 	// Use this for initialization
 	void Start () {
-        boxcollider=GetComponent<BoxCollider>();
         pivotPoint = GameObject.Find("Pivot point");
     }
 	

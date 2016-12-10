@@ -7,9 +7,10 @@ public class PlayerXP : MonoBehaviour {
 	public int maxXP;
 	private int xp;
 	public float xpFactor;
-	public GameObject Player;
+	public GameObject player;
 	// Use this for initialization
 	void Start () {
+		player = GameObject.Find("Player");
 		xp = 0;
 		xpDisplay = GetComponent<Text> ();
 		xpDisplay.text = "XP: " + xp + "/" + maxXP;
@@ -24,7 +25,7 @@ public class PlayerXP : MonoBehaviour {
 		if (xpGain + xp < maxXP) {
 			xp += xpGain;
 		} else {
-			Player.GetComponent<PlayerStats>().LevelUp();
+			player.GetComponent<PlayerStats>().LevelUp();
 			xp = xp+xpGain - maxXP;
 			maxXP = Mathf.RoundToInt(maxXP * xpFactor);
 			xpFactor++;
