@@ -83,4 +83,16 @@ public class Inventory : MonoBehaviour {
 		}
 		items [item2].gameObject.GetComponent<Transform> ().localPosition = new Vector2 (0f, 0f);
 	}
+
+	public Item GetSword(){
+		return items [0];
+	}
+
+	public Item GetBow(){
+		return items [1];
+	}
+
+	public Item GetArmor(){
+		return items [2];
+	}
 }
