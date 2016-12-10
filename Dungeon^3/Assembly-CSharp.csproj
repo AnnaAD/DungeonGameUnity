@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
      <Compile Include="Assets\Scripts\Inventory\Item.cs" />
      <Compile Include="Assets\Scripts\Inventory\PopupManager.cs" />
+     <Compile Include="Assets\Scripts\Inventory\UImanager.cs" />
      <Compile Include="Assets\Scripts\LayerManager.cs" />
      <Compile Include="Assets\Scripts\Level\ChestController.cs" />
      <Compile Include="Assets\Scripts\Level\DistanceDetection.cs" />
@@ -67,7 +68,6 @@
      <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerXP.cs" />
      <Compile Include="Assets\Scripts\TrapdoorTrigger.cs" />
-     <Compile Include="Assets\Scripts\UImanager.cs" />
      <Compile Include="Assets\Scripts\Weapons\ArrowBehavior.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordAnimation.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordController.cs" />
