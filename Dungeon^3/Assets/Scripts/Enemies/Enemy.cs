@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour {
 			}
 		}
 
-		Debug.Log("This shouldn't happen...");
-		return false;
+		//Debug.Log("This shouldn't happen...");
+		return true;
 	}
 }

@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour {
 		cam = Camera.main.transform;
 		camForward = Vector3.Scale (cam.forward, new Vector3 (1, 0, 1)).normalized;
 		controller = GetComponent<CharacterController>();
-		animator = GetComponent<Animator>();
+		animator = GetComponentInChildren<Animator>();
 		animator.enabled = false;
 	}
 
@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void Fall() {
+		Debug.Log("falling");
 		animator.enabled = true;
 		animator.SetTrigger("Fall");
 	}
