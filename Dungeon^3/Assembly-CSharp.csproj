@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\Weapons\ArrowBehavior.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordAnimation.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordController.cs" />
+     <Compile Include="Assets\StatButtonControls.cs" />
      <Compile Include="Assets\StatUI.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
