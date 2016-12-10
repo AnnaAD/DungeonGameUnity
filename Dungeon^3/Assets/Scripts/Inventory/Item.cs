@@ -3,8 +3,12 @@ using System.Collections;
 
 public class Item : ScriptableObject {
 	public GameObject gameObject;
+	public string type;
+	public float damage;
 	public Item()
 	{
+		type = "item";
+		damage = 5f;
 	}
 	public Item(GameObject inventorySlotObject)
 	{

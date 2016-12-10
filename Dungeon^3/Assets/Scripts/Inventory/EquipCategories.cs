@@ -5,18 +5,18 @@ public class Sword : Equipment {
 	public float damage;
 	public static Sprite[] sprites; 
 	public static float[] damages;
+	public string type;
 	// Use this for initialization
 	public Sword (int tier,GameObject inventorySlotObject) : base(tier,inventorySlotObject) {
 		
-		gameObject.GetComponent<Image> ().sprite = sprites [tier];//Resources.Load<Sprite>("Images/Swords/TestSword");
+		gameObject.GetComponent<Image> ().sprite = sprites [tier];
 		damage=damages[tier];
-
-
+		type = "sword";
 	}
 	public void OnEnable()
 	{
 		sprites = Resources.LoadAll<Sprite>("Images/Swords");
-		damages = new float[] {1f,2f};
+		damages = new float[] {2f,2f};
 	}
 
 }
@@ -26,11 +26,12 @@ public class Bow : Equipment {
 	public static Sprite[] sprites; 
 	public static float[] damages;
 	// Use this for initialization
+	public string type;
 	public Bow (int tier,GameObject inventorySlotObject) : base(tier,inventorySlotObject) {
 
 		gameObject.GetComponent<Image> ().sprite = sprites [tier];//Resources.Load<Sprite>("Images/Swords/TestSword");
 		damage=damages[tier];
-
+		type = "bow";
 
 	}
 	public void OnEnable()
