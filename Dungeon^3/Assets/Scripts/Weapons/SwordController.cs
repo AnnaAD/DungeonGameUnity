@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SwordController : MonoBehaviour {
     GameObject pivotPoint;
+
 	// Use this for initialization
 	void Start () {
         pivotPoint = GameObject.Find("Pivot point");
@@ -15,7 +16,9 @@ public class SwordController : MonoBehaviour {
     void OnCollisionEnter(Collision col) {
 
         if (col.gameObject.tag == "Enemy" && pivotPoint.GetComponent<SwordAnimation>().isSwinging) {
-			col.gameObject.GetComponent<Enemy>().Damage(4);
+			float swordDamage = GameObject.Find ("PlayerModel").GetComponent<Inventory> ().GetSword ().GetDamage ();
+			float swordsmanship = GameObject.Find ("Player").GetComponent<PlayerStats> ().swordsmanship;
+			col.gameObject.GetComponent<Enemy>().Damage(swordDamage*(.7f+swordsmanship*.05f));
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-	public int health;
+	public float health;
 	public int damage;
 	public Rigidbody rBody;
 	public GameObject player;
@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour {
 	
 	}
 
-	public void Damage(int number) {
+	public void Damage(float number) {
 		health -= number;
 		//Debug.Log(health);
 		if (health <= 0) {

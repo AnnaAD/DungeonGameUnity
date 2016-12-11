@@ -23,4 +23,8 @@ public class Item : ScriptableObject {
 		return gameObject;
 	}
 
+	public virtual float GetDamage()
+	{	
+		return 0;
+	}
 }
