@@ -80,4 +80,8 @@ public class PlayerController : MonoBehaviour {
 		animator.enabled = true;
 		animator.SetTrigger("Fall");
 	}
+
+	public void incrementSpeed(float val){
+		speed = speed + val;
+	}
 }

@@ -12,8 +12,14 @@ public class PlayerStats : MonoBehaviour {
 	public int bowmanship;
 	public GameObject StatDisplay;
 	public GameObject LevelUpDisplay;
-
+	public PlayerHealth healthScript;
+	public PlayerController playerScript;
 	//TODO: Assign statistics (i.e. speed, strength, etc. and have them incremented when character levels up)
+	public void Start(){
+		healthScript = GameObject.Find ("Health").GetComponent<PlayerHealth> ();
+		playerScript = GameObject.Find ("Player").GetComponent<PlayerController>();
+	}
+
 	public void LevelUp(){
 		Debug.Log("leveled up");
 		level++;
@@ -23,14 +29,17 @@ public class PlayerStats : MonoBehaviour {
 
 	public void updateHealthBoost(int val) {
 		healthBoost+= val;
+		healthScript.incrementMaxHealth (val*25);
 	}
 
 	public void updateSpeed(int val) {
 		speed += val;
+		playerScript.incrementSpeed (val * .2f);
 	}
 
 	public void updateVitality(int val) {
 		vitality += val;
+		healthScript.incrementRegenRate (.2f*val);	
 	}
 
 	public void updateDexterity(int val) {
