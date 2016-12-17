@@ -5,6 +5,7 @@ public class GreenSlime : Enemy {
 	private Vector3 lastSeen;
 	private bool seen;
 	private bool checkedLastSeen;
+	public float speed;
 	// Update is called once per frame
 	void Update () {
 
@@ -13,7 +14,7 @@ public class GreenSlime : Enemy {
 
 		if(seen) {
 			transform.LookAt(player.transform);
-			rBody.velocity = transform.forward * 3;
+			rBody.velocity = transform.forward * speed;
 			transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
 			lastSeen = player.transform.position;
 			checkedLastSeen = false;
@@ -28,7 +29,7 @@ public class GreenSlime : Enemy {
 
 			if(checkedLastSeen == false) {
 				transform.LookAt(lastSeen);
-				rBody.velocity = transform.forward * 3;
+				rBody.velocity = transform.forward * speed;
 				transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
 			} else {
 				//idle mode
