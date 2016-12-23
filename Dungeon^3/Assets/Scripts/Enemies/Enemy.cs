@@ -28,8 +28,8 @@ public class Enemy : MonoBehaviour {
 
 	public void Damage(float number) {
 		health -= number;
-		//Debug.Log(health);
 		if (health <= 0) {
+			print ("Started Animating Death of" + this);
 			GetComponent<Animator>().SetTrigger("Die");
 		}
 	}
@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	public void Die() {
+		print ("died");
 		playerXP.GetComponent<PlayerXP>().addXP(xp);
 		Destroy(gameObject);
 	}

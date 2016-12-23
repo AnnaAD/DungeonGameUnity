@@ -2,18 +2,18 @@
 using System.Collections;
 
 public class MotherSlime : GreenSlime {
-	private bool seen;
+	
 	public GameObject SlimePrefab;
 	private int children;
 	// Use this for initialization
-	void Start () {
+	new void Start () {
 		base.Start ();
 		children = Random.Range(4,7);
 		print (children);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	protected new void Update () {
 		seen = CanSeePlayer ();
 
 		if (seen) {
@@ -29,7 +29,7 @@ public class MotherSlime : GreenSlime {
 
 	}
 
-	public void Die (){
+	public new  void Die (){
 		print ("Spawned " + children + " children");
 		for(int i = 0; i < children; i++) {
 

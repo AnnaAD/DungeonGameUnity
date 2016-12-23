@@ -3,11 +3,11 @@ using System.Collections;
 
 public class GreenSlime : Enemy {
 	private Vector3 lastSeen;
-	private bool seen;
+	protected bool seen;
 	private bool checkedLastSeen;
 	public float speed;
 	// Update is called once per frame
-	protected void Start(){
+	new protected void Start(){
 		base.Start();
 	}
 

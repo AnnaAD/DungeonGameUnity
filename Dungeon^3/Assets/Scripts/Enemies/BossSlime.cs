@@ -45,7 +45,7 @@ public class BossSlime : Enemy {
 		}
 	}
 
-	void Die() {
+	new void Die() {
 		Debug.Log("Die");
 		for(int i = 0; i < 20; i++) {
 			GameObject slime = Instantiate(SlimePrefab) as GameObject;

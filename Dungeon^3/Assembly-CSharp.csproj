@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\Weapons\ArrowBehavior.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordAnimation.cs" />
      <Compile Include="Assets\Scripts\Weapons\SwordController.cs" />
+     <Compile Include="Assets\Teleporter.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
