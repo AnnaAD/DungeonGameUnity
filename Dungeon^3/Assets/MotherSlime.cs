@@ -8,7 +8,8 @@ public class MotherSlime : GreenSlime {
 	// Use this for initialization
 	void Start () {
 		base.Start ();
-		children = (int)(Random.value * 2f + 4f);
+		children = Random.Range(4,7);
+		print (children);
 	}
 	
 	// Update is called once per frame
@@ -30,7 +31,7 @@ public class MotherSlime : GreenSlime {
 
 	public void Die (){
 		print ("Spawned " + children + " children");
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < children; i++) {
 
 			GameObject slime = Instantiate(SlimePrefab) as GameObject;
 			slime.transform.position = transform.position;
