@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour {
 	private GameObject playerXP;
 	public int xp;
 	// Use this for initialization
-	void Start () {
+	protected void Start () {
 		rBody = GetComponent<Rigidbody> ();
 		player = GameObject.Find("Player");
 		playerHealth = GameObject.Find("Health");

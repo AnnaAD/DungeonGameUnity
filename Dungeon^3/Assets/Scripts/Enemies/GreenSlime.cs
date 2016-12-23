@@ -7,7 +7,11 @@ public class GreenSlime : Enemy {
 	private bool checkedLastSeen;
 	public float speed;
 	// Update is called once per frame
-	void Update () {
+	protected void Start(){
+		base.Start();
+	}
+
+	public void Update () {
 
 		Debug.DrawRay(transform.position, transform.forward);
 		seen = CanSeePlayer();
