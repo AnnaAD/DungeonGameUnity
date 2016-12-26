@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour {
 	public float arrowSpeed = 9f;
 	private CharacterController controller;
 	private Animator animator;
+	private bool falling;
+	private int fallCount;
 
 	void Start() {
 		worldManager = GameObject.Find ("WorldManager");
@@ -28,7 +30,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update() {
-		if (!worldManager.GetComponent<UImanager> ().isPaused) {
+
+		if (!worldManager.GetComponent<UImanager> ().isPaused && !animator.enabled) {
 			float inputX = Input.GetAxisRaw ("Horizontal");
 			float inputZ = Input.GetAxisRaw ("Vertical");
 			moveDirection = (inputZ * camForward + inputX * cam.right).normalized;
@@ -58,6 +61,15 @@ public class PlayerController : MonoBehaviour {
 				pivotPoint.GetComponent<SwordAnimation>().Swing();
 			}
 			transform.position = new Vector3 (transform.position.x, 0.5f, transform.position.z);
+		
+		} else if (!worldManager.GetComponent<UImanager> ().isPaused && falling) {
+			controller.Move(transform.forward * 0.05f);
+			fallCount++;
+
+			if(fallCount > 20) {
+				falling = false;
+			}
+
 		}
 	}
 
@@ -75,10 +87,13 @@ public class PlayerController : MonoBehaviour {
 		Destroy(bullet, 1.5f);  
 	}
 
-	public void Fall() {
+	public void Fall(Transform trigger) {
 		Debug.Log("falling");
 		animator.enabled = true;
 		animator.SetTrigger("Fall");
+		transform.LookAt(new Vector3(trigger.position.x, transform.position.y, trigger.position.z));
+		falling = true;
+		fallCount = 0;
 	}
 
 	public void incrementSpeed(float val){
