@@ -18,6 +18,7 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 - [X] Add damage for player/slime attacks
 - [X] Add health
   - [ ] Dying
+  - [ ] Health Bar (maybe like one in Farcry 2 where it is split into segments and only auto-regens one segment and you need potions to regen other sections.
 - [X] Add XP
 - [ ] Add Levelling Up and Character Stats
   - [ ]Level Up Animation
@@ -39,15 +40,16 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 - [ ] Plot
 - [ ] Sprucing up Looks and Making it look more professional (Models, textures, lighting, rendering, animations, particles, etc.)
 - [ ] Tutorial
+
 ##Things to Consider
 
 ###Saving
 Should players be allowed to save?
- - [ ] No
- - [ ] Save & Quit Button Between Levels
- - [ ] Whenever you quit to title
- - [ ] Autosave
-Save should clear on death
+ - No
+ - Save & Quit Button Between Levels
+ - Whenever you quit to title
+ - Autosave
+ - Save should clear on death
 
 ##Extensions to the Game Once Finished
 - [ ] First Person View
