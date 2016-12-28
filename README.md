@@ -1,5 +1,5 @@
 # DungeonGameUnity
-A WIP unity dungeon game
+Sometimes known as Dungeon Cubed this is a WIP unity dungeon game with action and rougelike elements. The end goal is to make a fun, playable game that at least a small number of people can enjoy and that we can finish. We are probably aiming to release summer of 2017.
 
 ##Edits
 
@@ -21,7 +21,7 @@ Becareful with editing stuff because this is a Unity project and weird things ha
   - [ ] Health Bar (maybe like one in Farcry 2 where it is split into segments and only auto-regens one segment and you need potions to regen other sections.
 - [X] Add XP
 - [ ] Add Levelling Up and Character Stats
-  - [ ]Level Up Animation
+  - [ ] Level Up Animation
 - [ ] Add dungeon generation? / Room progression
   - [ ] Data Persistence to Save stuff between Rooms
 - [ ] Add different monsters
