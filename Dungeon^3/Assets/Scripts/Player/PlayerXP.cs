@@ -29,6 +29,7 @@ public class PlayerXP : MonoBehaviour {
 			xp = xp+xpGain - maxXP;
 			maxXP = Mathf.RoundToInt(maxXP * xpFactor);
 			xpFactor++;
+			addXP(0);
 		}
 		xpDisplay.text = "XP: " + xp + "/" + maxXP;	
 	}

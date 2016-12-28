@@ -24,6 +24,7 @@ public class PlayerStats : MonoBehaviour {
 		Debug.Log("leveled up");
 		level++;
 		StatDisplay.GetComponent<StatUI>().updateStats();
+		LevelUpDisplay.GetComponent<StatButtonControls>().leveledUp();
 		LevelUpDisplay.SetActive(true);
 	}
 

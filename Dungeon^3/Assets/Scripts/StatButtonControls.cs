@@ -7,6 +7,9 @@ public class StatButtonControls : MonoBehaviour {
 	private GameObject levelPanel;
 	private GameObject statDisplay;
 
+	//How many times you leveled Up
+	public int levelsUp = 0;
+
 	void Start() {
 		player = GameObject.Find("Player");
 		statDisplay = GameObject.Find("StatText");
@@ -14,37 +17,59 @@ public class StatButtonControls : MonoBehaviour {
 
 	public void healthBoostClicked() {
 		player.GetComponent<PlayerStats>().updateHealthBoost(1);
-		gameObject.SetActive(false);
-		statDisplay.GetComponent<StatUI>().updateStats();
+		levelsUp--;
+		if (levelsUp < 1) {
+			gameObject.SetActive(false);
+			statDisplay.GetComponent<StatUI>().updateStats();
+		}
 	}
 
 	public void speedClicked() {
 		player.GetComponent<PlayerStats>().updateSpeed(1);
-		gameObject.SetActive(false);
-		statDisplay.GetComponent<StatUI>().updateStats();
+		levelsUp--;
+		if (levelsUp < 1) {
+			gameObject.SetActive(false);
+			statDisplay.GetComponent<StatUI>().updateStats();
+		}
 	}
 
 	public void vitalityClicked() {
 		player.GetComponent<PlayerStats>().updateVitality(1);
-		gameObject.SetActive(false);
-		statDisplay.GetComponent<StatUI>().updateStats();
+		levelsUp--;
+		if (levelsUp < 1) {
+			gameObject.SetActive(false);
+			statDisplay.GetComponent<StatUI>().updateStats();
+		}
 	}
 
 	public void dexterityClicked() {
 		player.GetComponent<PlayerStats>().updateDexterity(1);
-		gameObject.SetActive(false);
-		statDisplay.GetComponent<StatUI>().updateStats();
+		levelsUp--;
+		if (levelsUp < 1) {
+			gameObject.SetActive(false);
+			statDisplay.GetComponent<StatUI>().updateStats();
+		}
 	}
 
 	public void swordsmanshipClicked() {
 		player.GetComponent<PlayerStats>().updateSwordsmanship(1);
-		gameObject.SetActive(false);		
-		statDisplay.GetComponent<StatUI>().updateStats();
+		levelsUp--;
+		if (levelsUp < 1) {
+			gameObject.SetActive(false);		
+			statDisplay.GetComponent<StatUI>().updateStats();
+		}
 	}
 
 	public void bowmanshipClicked() {
 		player.GetComponent<PlayerStats>().updateBowmanship(1);
-		gameObject.SetActive(false);
-		statDisplay.GetComponent<StatUI>().updateStats();
+		levelsUp--;
+		if (levelsUp < 1) {
+			gameObject.SetActive(false);
+			statDisplay.GetComponent<StatUI>().updateStats();
+		}
+	}
+
+	public void leveledUp() {
+		levelsUp++;
 	}
 }
