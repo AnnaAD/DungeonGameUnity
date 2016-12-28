@@ -5,6 +5,7 @@ public class Item : ScriptableObject {
 	public GameObject gameObject;
 	public string type;
 	public float damage;
+
 	public Item()
 	{
 		type = "item";
