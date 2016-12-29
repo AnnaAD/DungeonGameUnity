@@ -1,26 +1,30 @@
-﻿using UnityEngine;
+﻿﻿using UnityEngine;
 using System.Collections;
 
-public class SwordController : MonoBehaviour {
-	GameObject pivotPoint;
-
-	// Use this for initialization
+public class ArrowBehavior : MonoBehaviour {
+	Rigidbody rigidbody;
+	GameObject player;
+		// Use this for initialization
 	void Start () {
-		pivotPoint = GameObject.Find("Pivot point");
+		player = GameObject.Find("Player");
+		rigidbody = GetComponent<Rigidbody>();
+		Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>(),true);
 	}
-
+		
 	// Update is called once per frame
 	void Update () {
-
 	}
-	void OnCollisionEnter(Collision col) {
-		if (col.gameObject.tag == "Enemy" && pivotPoint.GetComponent<SwordAnimation>().isSwinging) {
-			Item sword = GameObject.Find ("Player").GetComponent<Inventory> ().GetSword() ;
-			if (sword == null) {
+
+	void OnCollisionEnter (Collision col) {
+		rigidbody.constraints = RigidbodyConstraints.None;
+		if(col.gameObject.tag == "Enemy") {
+			float bowmanship = player.GetComponent<PlayerStats> ().bowmanship;
+			Item bow = GameObject.Find ("Player").GetComponent<Inventory> ().GetBow();
+			if (bow == null) {
 				return;
 			}
-			float swordsmanship = GameObject.Find ("Player").GetComponent<PlayerStats> ().swordsmanship;
-			col.gameObject.GetComponent<Enemy>().Damage(sword.GetDamage()*(.7f+swordsmanship*.05f));
+			Debug.Log("Damage. Bowmanship: "+bowmanship+" Bow Item Damage:"+bow.GetDamage());
+			col.gameObject.GetComponent<Enemy>().Damage((bow.GetDamage()*(.7f+(bowmanship*.05f)))); 
 		}
 	}
 }
