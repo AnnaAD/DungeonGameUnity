@@ -40,6 +40,8 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 - [ ] Plot
 - [ ] Sprucing up Looks and Making it look more professional (Models, textures, lighting, rendering, animations, particles, etc.)
 - [ ] Tutorial
+- [ ] Music
+  - [ ] Sound Effects
 
 ##Things to Consider
 
