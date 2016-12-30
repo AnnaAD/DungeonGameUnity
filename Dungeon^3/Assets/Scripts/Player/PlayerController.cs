@@ -55,7 +55,9 @@ public class PlayerController : MonoBehaviour {
 
 
 			if (Input.GetMouseButtonDown (0)) {
-				Fire ();
+				if(GetComponentInChildren<Inventory>().GetBow() != null) {
+					Fire ();
+				}
 			}
 			if (Input.GetMouseButtonDown (1)) {
 				pivotPoint.GetComponent<SwordAnimation>().Swing();
