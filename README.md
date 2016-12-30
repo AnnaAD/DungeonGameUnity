@@ -20,12 +20,14 @@ Becareful with editing stuff because this is a Unity project and weird things ha
   - [ ] Dying
   - [ ] Health Bar (maybe like one in Farcry 2 where it is split into segments and only auto-regens one segment and you need potions to regen other sections.
 - [X] Add XP
-- [ ] Add Levelling Up and Character Stats
+- [X] Add Levelling Up and Character Stats
   - [ ] Level Up Animation
+  - [ ] Add implementation of effects of all Stats
 - [ ] Add dungeon generation? / Room progression
   - [ ] Data Persistence to Save stuff between Rooms
 - [ ] Add different monsters
 - [X] Inventory
+  - [ ] Make equipping different items show different models in-game
 - [X] Items(Need Many More, but Framework is there)
 - [ ] Chests/Loot Bags
   - [ ] Items dropped by monsters
