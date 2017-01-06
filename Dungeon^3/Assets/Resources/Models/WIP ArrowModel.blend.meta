@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: d167eed04ce284650b4a4ae0cb9885e5
-timeCreated: 1483573798
-=======
-guid: 1ef9c7faef53eff498cb65682a396e5d
-timeCreated: 1483496276
->>>>>>> origin/master
+guid: 0ae17e7ef01ee0048b4f124066b15227
+timeCreated: 1483047862
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Cube
-    100002: Cube_001
-    100004: Cube_002
-    100006: Cylinder
-    100008: //RootNode
-    400000: Cube
-    400002: Cube_001
-    400004: Cube_002
-    400006: Cylinder
-    400008: //RootNode
-    2300000: Cube
-    2300002: Cube_001
-    2300004: Cube_002
-    2300006: Cylinder
-    3300000: Cube
-    3300002: Cube_001
-    3300004: Cube_002
-    3300006: Cylinder
-    4300000: Cube_001
-    4300002: Cylinder
-    4300004: Cube
-    4300006: Cube_002
+    100000: Cone
+    100002: Cylinder
+    100004: Plane
+    100006: Plane_001
+    100008: Plane_002
+    100010: //RootNode
+    400000: Cone
+    400002: Cylinder
+    400004: Plane
+    400006: Plane_001
+    400008: Plane_002
+    400010: //RootNode
+    2300000: Cone
+    2300002: Cylinder
+    2300004: Plane
+    2300006: Plane_001
+    2300008: Plane_002
+    3300000: Cone
+    3300002: Cylinder
+    3300004: Plane
+    3300006: Plane_001
+    3300008: Plane_002
+    4300000: Plane
+    4300002: Cone
+    4300004: Cylinder
+    4300006: Plane_001
+    4300008: Plane_002
     7400000: Default Take
     9500000: //RootNode
   materials:

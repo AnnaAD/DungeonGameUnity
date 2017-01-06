@@ -8,3 +8,5 @@ Dungeon^3/Temp/
 *.tmp
 *.user
 *.userprefs
+
+*.meta

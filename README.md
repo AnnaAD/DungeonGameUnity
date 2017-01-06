@@ -47,6 +47,21 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 
 ##Things to Consider
 
+###Items
+How should items, items' stats and player item-related stats work?
+
+Maybe: Each item is ranked by recharge speed, and strength. After each strike/shot there is a time before you can shoot/swing again, determined by the item recharge speed. Obviously, the strength would correlate to the damage done. The player's melee/ranged weapon skill improves the damage and the recharge speed? Or maybe just the damage done by each category of weapon respectively. 
+
+Categories of Weapons and Approxiamite numbers:
+
+  - Melee
+    - Swords (10 in game) - Middle of the road stats for speed/strength
+    - Hammers/Axes (7 in game) - high strength and low speed
+    - Knives (5 in game) - low strength high speed
+  - Ranges
+    - Bow (10 in game) - Some have balanced speed/strength but some also have higher speed and lower strength
+    - Crossbow (5 in game) - high strength lower speed
+
 ###Saving
 Should players be allowed to save?
  - No
