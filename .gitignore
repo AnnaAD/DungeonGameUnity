@@ -10,3 +10,5 @@ Dungeon^3/Temp/
 *.userprefs
 
 *.meta
+
+*.csproj
