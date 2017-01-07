@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GreenSlimeParticleTest.cs" />
      <Compile Include="Assets\MotherSlime.cs" />
      <Compile Include="Assets\NextLevelAfterFall.cs" />
      <Compile Include="Assets\Scripts\Enemies\BossSlime.cs" />

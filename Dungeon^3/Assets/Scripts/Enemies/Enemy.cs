@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour {
 	public GameObject player;
 	private GameObject playerHealth;
 	private GameObject playerXP;
+	private GameObject deathEmitter;
 	public int xp;
 	// Use this for initialization
 	protected void Start () {
@@ -16,6 +17,7 @@ public class Enemy : MonoBehaviour {
 		player = GameObject.Find("Player");
 		playerHealth = GameObject.Find("Health");
 		playerXP = GameObject.Find("XP");
+		deathEmitter = Resources.Load("Prefabs/DeathEmitter") as GameObject;
 		loadResources();
 	}
 
@@ -29,8 +31,7 @@ public class Enemy : MonoBehaviour {
 	public void Damage(float number) {
 		health -= number;
 		if (health <= 0) {
-			print ("Started Animating Death of" + this);
-			GetComponent<Animator>().SetTrigger("Die");
+			Die();
 		}
 	}
 
@@ -40,9 +41,11 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
-	public void Die() {
+	public virtual void Die() {
 		print ("died");
 		playerXP.GetComponent<PlayerXP>().addXP(xp);
+		GameObject instance = Instantiate(deathEmitter,transform.position,Quaternion.identity) as GameObject;
+		Destroy(instance,1.5f);
 		Destroy(gameObject);
 	}
 
