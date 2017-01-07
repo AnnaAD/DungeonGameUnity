@@ -7,9 +7,9 @@ public class MotherSlime : GreenSlime {
 	private int children;
 	// Use this for initialization
 	new void Start () {
-		base.Start ();
 		children = Random.Range(4,7);
 		print (children);
+		base.Start ();
 	}
 	
 	// Update is called once per frame
@@ -29,7 +29,7 @@ public class MotherSlime : GreenSlime {
 
 	}
 
-	public new  void Die (){
+	override public void Die (){
 		print ("Spawned " + children + " children");
 		for(int i = 0; i < children; i++) {
 

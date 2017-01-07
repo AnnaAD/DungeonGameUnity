@@ -49,7 +49,7 @@ public class PurpleSlime : Enemy {
 
 		// Add velocity to the bullet
 		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 7f;
-		bullet.GetComponent<BulletLogic> ().damage = 1;
+		bullet.GetComponent<BulletLogic> ().damage = damage;
 		// Destroy the bullet after 2 seconds
 		Destroy(bullet, 1.5f); 
 	}

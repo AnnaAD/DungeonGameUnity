@@ -19,7 +19,7 @@ public class ExplodingBulletLogic : MonoBehaviour {
 			GameObject.Find ("Health").gameObject.GetComponent<PlayerHealth> ().UpdateHealth (-25);
 			Explode ();
 		}
-		if (col.gameObject.layer==8) {
+		else if(col.gameObject.layer==8||col.gameObject.tag=="Enemy") {
 			Explode ();
 		}
 	}
@@ -29,7 +29,7 @@ public class ExplodingBulletLogic : MonoBehaviour {
 		//Creates 8 bullet objects in a semicircle and a velocity going out. 
 		for (int j = 0; j < 8; j++) {
 			GameObject shrapnel = GameObject.Instantiate (bulletPrefab,
-				new Vector3(.5f*Mathf.Sin(Mathf.Deg2Rad*45*j),pos.y,.5f*Mathf.Cos(Mathf.Deg2Rad*45*j)),
+				new Vector3(.5f*Mathf.Sin(Mathf.Deg2Rad*45*j)+pos.x,pos.y,.5f*Mathf.Cos(Mathf.Deg2Rad*45*j)+pos.z),
 				    Quaternion.Euler (0, 45 * j, 0)) as GameObject;
 			shrapnel.GetComponent<Rigidbody> ().velocity = shrapnel.GetComponent<Transform> ().forward * 5f;
 			shrapnel.GetComponent<BulletLogic> ().damage = 5;

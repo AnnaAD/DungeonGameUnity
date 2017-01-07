@@ -47,11 +47,11 @@
   <ItemGroup>
      <Compile Include="Assets\GreenSlimeParticleTest.cs" />
      <Compile Include="Assets\NextLevelAfterFall.cs" />
-     <Compile Include="Assets\Scripts\Enemies\BossSlime.cs" />
      <Compile Include="Assets\Scripts\Enemies\BulletLogic.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\ExplodingBulletLogic.cs" />
      <Compile Include="Assets\Scripts\Enemies\GreenSlime.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Inventory\BossSlime.cs" />
      <Compile Include="Assets\Scripts\Enemies\Inventory\ClickDetection.cs" />
      <Compile Include="Assets\Scripts\Enemies\Inventory\Consumable.cs" />
      <Compile Include="Assets\Scripts\Enemies\Inventory\EquipCategories.cs" />
@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Enemies\Inventory\PopupManager.cs" />
      <Compile Include="Assets\Scripts\Enemies\Inventory\UImanager.cs" />
      <Compile Include="Assets\Scripts\Enemies\MotherSlime.cs" />
+     <Compile Include="Assets\Scripts\Enemies\PurpleBoss.cs" />
      <Compile Include="Assets\Scripts\Enemies\PurpleSlime.cs" />
      <Compile Include="Assets\Scripts\Enemies\Teleporter.cs" />
      <Compile Include="Assets\Scripts\LayerManager.cs" />
