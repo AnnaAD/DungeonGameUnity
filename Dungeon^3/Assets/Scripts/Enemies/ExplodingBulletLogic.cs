@@ -18,26 +18,31 @@ public class ExplodingBulletLogic : MonoBehaviour {
 		if (col.gameObject.tag == "Player") {
 			GameObject.Find ("Health").gameObject.GetComponent<PlayerHealth> ().UpdateHealth (-25);
 			Explode ();
-			Destroy (gameObject);
+
 		}
-		if (col.gameObject.tag=="Level") {
+		if (col.gameObject.layer==8) {
 			Explode ();
-			Destroy (gameObject);
+
 		}
 	}
 
 	public void Explode(){
-		for (int i = 80; i > 55; i-=5) {
-			for (int j = 1; j < 7; j++) {
-				GameObject shrapnel=GameObject.Instantiate (bulletPrefab,
-					this.GetComponent<Transform>().position,
-					Quaternion.Euler(-i,360/j,0)) as GameObject;
-				shrapnel.GetComponent<Transform> ().Translate ( shrapnel.GetComponent<Transform> ().forward*.2f);
-				shrapnel.GetComponent<Rigidbody> ().velocity = shrapnel.GetComponent<Transform> ().forward*.3f;
+		gameObject.SetActive (false);
+		Vector3 pos = this.GetComponent<Transform> ().position;
+		//for (int i = 80; i > 55; i-=5) {
+		for (int j = 0; j < 6; j++) {
+			GameObject shrapnel = GameObject.Instantiate (bulletPrefab,
+				new Vector3(2f*Mathf.Cos((1/3)*Mathf.PI*j),pos.y,-2f*Mathf.Sin((1/3)*Mathf.PI*j)),
 
-			}
+				                      Quaternion.Euler (0, 60 * j, 0)) as GameObject;
+			shrapnel.GetComponent<Transform> ().Translate (shrapnel.GetComponent<Transform> ().forward * 3f, Space.Self);
+			shrapnel.GetComponent<Rigidbody> ().velocity = shrapnel.GetComponent<Transform> ().forward * 5f;
+			shrapnel.GetComponent<BulletLogic> ().damage = 5;
+			print ("created gameObject shrapnel. Rotation: " + shrapnel.GetComponent<Transform> ().eulerAngles + " Velocity: " + shrapnel.GetComponent<Rigidbody> ().velocity+ "Position: "+shrapnel.GetComponent<Transform>().position);
 		}
+			//}	
 		Destroy (gameObject);
+
 	}
 	
 

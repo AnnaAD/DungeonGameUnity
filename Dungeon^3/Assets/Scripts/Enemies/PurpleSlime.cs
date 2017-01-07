@@ -10,6 +10,7 @@ public class PurpleSlime : Enemy {
 
 	public override void loadResources() {
 		counter = 0;
+		damage = 1;
 	}
 
 	// Update is called once per frame
@@ -48,7 +49,7 @@ public class PurpleSlime : Enemy {
 
 		// Add velocity to the bullet
 		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 7f;
-
+		bullet.GetComponent<BulletLogic> ().damage = 1;
 		// Destroy the bullet after 2 seconds
 		Destroy(bullet, 1.5f); 
 	}
