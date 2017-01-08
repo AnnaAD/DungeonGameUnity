@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Enemies\Inventory\PopupManager.cs" />
      <Compile Include="Assets\Scripts\Enemies\Inventory\UImanager.cs" />
      <Compile Include="Assets\Scripts\Enemies\MotherSlime.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Orbiter.cs" />
      <Compile Include="Assets\Scripts\Enemies\PurpleBoss.cs" />
      <Compile Include="Assets\Scripts\Enemies\PurpleSlime.cs" />
      <Compile Include="Assets\Scripts\Enemies\Teleporter.cs" />
