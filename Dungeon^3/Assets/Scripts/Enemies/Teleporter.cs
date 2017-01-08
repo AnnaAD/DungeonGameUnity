@@ -8,17 +8,20 @@ public class Teleporter : GreenSlime {
 		base.Start ();
 		timeSinceTeleport = 0;
 	}
-	
+
 	// Update is called once per frame
 	new void Update () {
 		base.Update ();
+		//transform.LookAt (player.transform);
 		timeSinceTeleport += Time.deltaTime;
 		if (timeSinceTeleport > 10f) {
-			Teleport ();
+			GetComponent<Animator> ().SetTrigger ("Teleport");
 			timeSinceTeleport = 0;
 		}
 	}
-
+	public void OnPreCull(){
+		//transform.LookAt (player.transform);
+	}
 	public void Teleport(){
 		transform.position = new Vector3 (player.transform.position.x, .5f, player.transform.position.z);
 	}
