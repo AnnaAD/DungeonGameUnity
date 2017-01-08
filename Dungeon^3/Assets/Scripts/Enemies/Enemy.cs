@@ -45,6 +45,8 @@ public class Enemy : MonoBehaviour {
 		print ("died");
 		playerXP.GetComponent<PlayerXP>().addXP(xp);
 		GameObject instance = Instantiate(deathEmitter,transform.position,Quaternion.identity) as GameObject;
+		instance.GetComponent<Renderer>().material = gameObject.GetComponent<Renderer> ().material;
+
 		Destroy(instance,1.5f);
 		Destroy(gameObject);
 	}
