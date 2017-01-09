@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour {
 		healthDisplay.text = "Health: " + Mathf.Floor(health) + "/"+maxHealth;
 		maxHealth = 100;
 		regenRate = 1f;
+		UpdateHealth(0);
 	}
 	
 	// Update is called once per frame
