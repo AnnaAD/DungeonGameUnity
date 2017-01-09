@@ -45,8 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GreenSlimeParticleTest.cs" />
-     <Compile Include="Assets\NextLevelAfterFall.cs" />
+     <Compile Include="Assets\Scripts\DropManager.cs" />
      <Compile Include="Assets\Scripts\Enemies\BulletLogic.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\ExplodingBulletLogic.cs" />
@@ -65,11 +64,13 @@
      <Compile Include="Assets\Scripts\Enemies\PurpleBoss.cs" />
      <Compile Include="Assets\Scripts\Enemies\PurpleSlime.cs" />
      <Compile Include="Assets\Scripts\Enemies\Teleporter.cs" />
+     <Compile Include="Assets\Scripts\GreenSlimeParticleTest.cs" />
      <Compile Include="Assets\Scripts\LayerManager.cs" />
      <Compile Include="Assets\Scripts\Level\ChestController.cs" />
      <Compile Include="Assets\Scripts\Level\DistanceDetection.cs" />
      <Compile Include="Assets\Scripts\Level\GenerateDungeon.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuScript.cs" />
+     <Compile Include="Assets\Scripts\NextLevelAfterFall.cs" />
      <Compile Include="Assets\Scripts\Player\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
