@@ -5,6 +5,7 @@ public class Item : ScriptableObject {
 	public GameObject gameObject;
 	public string type;
 	public float damage;
+	public GameObject prefab; 
 
 	public Item(GameObject inventorySlotObject){
 		gameObject = Object.Instantiate(Resources.Load<GameObject>("prefabs/ItemObject"));

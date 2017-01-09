@@ -6,8 +6,10 @@ public class Inventory : MonoBehaviour {
 	private bool down;
 	private int slotDragged;
 	private Transform startParent;
+	private GameObject player;
 	// Use this for initialization
 	void Start () {
+		player = GameObject.Find("Player");
 		slotDragged = -1;
 
 		slots = new GameObject[12];
@@ -72,8 +74,7 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 	//Switches the two items at indices item1 item2
-	public void SwitchItems(int item1,int item2)
-	{
+	public void SwitchItems(int item1,int item2) {
 		items [item1].gameObject.GetComponent<Transform> ().SetParent (slots [item2].GetComponent<Transform> (), false);
 		Item temp = items [item2];
 		items [item2] = items [item1];
@@ -94,5 +95,12 @@ public class Inventory : MonoBehaviour {
 
 	public Item GetArmor(){
 		return items [2];
+	}
+
+	public void AdjustSword() {
+		if(player.transform.GetChild(0).GetChild(0).childCount > 0) {
+			Destroy(player.transform.GetChild(0).GetChild(0).GetChild(0));
+		}
+		Instantiate(GetSword().prefab,player.transform.GetChild(0).GetChild(0));
 	}
 }
