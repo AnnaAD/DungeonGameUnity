@@ -20,7 +20,7 @@ public class GreenSlime : Enemy {
 			transform.LookAt(player.transform);
 			//print(transform.rotation.eulerAngles);
 			rBody.velocity = transform.forward * speed;
-			print (rBody.velocity);
+			//print (rBody.velocity);
 			transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
 			lastSeen = player.transform.position;
 			checkedLastSeen = false;

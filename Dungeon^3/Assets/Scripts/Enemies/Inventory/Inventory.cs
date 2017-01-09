@@ -83,6 +83,9 @@ public class Inventory : MonoBehaviour {
 			items [item1].gameObject.GetComponent<Transform> ().SetParent (slots [item1].GetComponent<Transform> (), false);
 		}
 		items [item2].gameObject.GetComponent<Transform> ().localPosition = new Vector2 (0f, 0f);
+		if (item1 == 0 || item2 == 0) {
+			AdjustSword ();
+		}
 	}
 
 	public Item GetSword(){
@@ -98,9 +101,12 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public void AdjustSword() {
+		Debug.Log (player.transform.GetChild (0) );
 		if(player.transform.GetChild(0).GetChild(0).childCount > 0) {
-			Destroy(player.transform.GetChild(0).GetChild(0).GetChild(0));
+			Destroy(player.transform.GetChild(0).GetChild(0).GetChild(0).gameObject);
 		}
-		Instantiate(GetSword().prefab,player.transform.GetChild(0).GetChild(0));
+		if(GetSword()!=null){
+			Instantiate(GetSword().prefab,player.transform.GetChild(0).GetChild(0));
+		}
 	}
 }
