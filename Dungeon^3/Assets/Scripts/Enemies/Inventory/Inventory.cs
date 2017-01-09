@@ -11,7 +11,6 @@ public class Inventory : MonoBehaviour {
 	void Start () {
 		player = GameObject.Find("Player");
 		slotDragged = -1;
-
 		slots = new GameObject[12];
 		for (int i = 1; i <= slots.Length; i++) {
 			slots [i-1] = GameObject.Find ("Slot (" + i+ ")");
@@ -21,6 +20,7 @@ public class Inventory : MonoBehaviour {
 		//Debug.Log(items [0].damage);		
 		items [1] = new Bow (0, slots [1]);
 		items [3] = new Sword (1, slots [3]);
+		AdjustSword ();
 	}
 
 	// Update is called once per frame
