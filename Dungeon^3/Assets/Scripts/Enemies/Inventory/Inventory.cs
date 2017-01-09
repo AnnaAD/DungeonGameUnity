@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour {
 		items[0] = new Sword (0, slots [0]);
 		//Debug.Log(items [0].damage);		
 		items [1] = new Bow (0, slots [1]);
+		items [3] = new Sword (1, slots [3]);
 	}
 
 	// Update is called once per frame
@@ -108,6 +109,7 @@ public class Inventory : MonoBehaviour {
 		if(GetSword()!=null){
 			GameObject sword=Instantiate(GetSword().GetPrefab(),player.transform.GetChild(0).GetChild(0)) as GameObject;
 			sword.transform.localPosition = new Vector3 (0f, 0f, 0f);
+			sword.transform.localRotation = Quaternion.Euler (0f, 0f, 0f);
 		}
 	}
 }
