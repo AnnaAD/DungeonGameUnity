@@ -11,27 +11,32 @@ ModelImporter:
     100006: LeftHand
     100008: RightHand
     100010: //RootNode
+    100012: Cube
     400000: Armour
     400002: Body
     400004: Helmet
     400006: LeftHand
     400008: RightHand
     400010: //RootNode
+    400012: Cube
     2300000: Armour
     2300002: Body
     2300004: Helmet
     2300006: LeftHand
     2300008: RightHand
+    2300010: Cube
     3300000: Armour
     3300002: Body
     3300004: Helmet
     3300006: LeftHand
     3300008: RightHand
+    3300010: Cube
     4300000: Armour
     4300002: LeftHand
     4300004: Body
     4300006: RightHand
     4300008: Helmet
+    4300010: Cube
     7400000: Default Take
     9500000: //RootNode
   materials:
