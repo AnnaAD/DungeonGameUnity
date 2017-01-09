@@ -14,13 +14,15 @@ public class SwordController: MonoBehaviour {
 
 	}
 	void OnCollisionEnter(Collision col) {
-
+		print ("Colliding");
 		if (col.gameObject.tag == "Enemy" && pivotPoint.GetComponent<SwordAnimation>().isSwinging) {
 			Item sword = GameObject.Find ("Player").GetComponent<Inventory> ().GetSword() ;
 			if (sword == null) {
 				return;
+				print ("Null sword");
 			}
 			float swordsmanship = GameObject.Find ("Player").GetComponent<PlayerStats> ().swordsmanship;
+			print (sword.GetDamage ());
 			col.gameObject.GetComponent<Enemy>().Damage(sword.GetDamage()*(.7f+swordsmanship*.05f));
 		}
 	}

@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		HandleDragging ();
-
+		print (GetSword ().GetDamage());
 
 	}
 	//Checks all the slots to see if the object is within maxDistance of them.
