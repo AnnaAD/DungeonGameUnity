@@ -38,6 +38,7 @@ Becareful with editing stuff because this is a Unity project and weird things ha
   - [ ] Items dropped by monsters
 - [ ] More Weapons and Items
 - [X] Menu/Settings
+  - [ ] Proper UI Scaling
   - [X] Pause Menu
   - [ ] Options
   - [X] Start Menu
