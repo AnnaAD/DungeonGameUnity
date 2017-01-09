@@ -25,7 +25,12 @@ Becareful with editing stuff because this is a Unity project and weird things ha
   - [ ] Add implementation of effects of all Stats
 - [ ] Add dungeon generation? / Room progression
   - [ ] Data Persistence to Save stuff between Rooms
-- [ ] Add different monsters
+- [X] Add different monsters
+  - [ ] Ghost
+  - [ ] Poison trail slime
+  - [ ] Fire Slimes
+  - [ ] Things other than slimes?
+  - [ ] Others
 - [X] Inventory
   - [ ] Make equipping different items show different models in-game
 - [X] Items(Need Many More, but Framework is there)
@@ -44,7 +49,7 @@ Becareful with editing stuff because this is a Unity project and weird things ha
 - [ ] Tutorial
 - [ ] Music
   - [ ] Sound Effects
-
+- [ ] Path finding/Better AI
 ##Things to Consider
 
 ###Items
