@@ -106,7 +106,8 @@ public class Inventory : MonoBehaviour {
 			Destroy(player.transform.GetChild(0).GetChild(0).GetChild(0).gameObject);
 		}
 		if(GetSword()!=null){
-			Instantiate(GetSword().prefab,player.transform.GetChild(0).GetChild(0));
+			GameObject sword=Instantiate(GetSword().GetPrefab(),player.transform.GetChild(0).GetChild(0)) as GameObject;
+			sword.transform.localPosition = new Vector3 (0f, 0f, 0f);
 		}
 	}
 }

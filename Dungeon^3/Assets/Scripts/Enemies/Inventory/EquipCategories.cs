@@ -7,14 +7,16 @@ public class Sword : Equipment {
 	public static float[] damages;
 	new public string type;
 	public string[] prefabs;
-	public GameObject prefab;
+	new public GameObject prefab;
 	// Use this for initialization
 	public Sword (int tier,GameObject inventorySlotObject) : base(tier,inventorySlotObject) {
 		
 		gameObject.GetComponent<Image> ().sprite = Resources.Load<Sprite>("Images/Swords/"+spriteLocations[tier]);
 		damage=damages[tier];
 		type = "sword";
-		prefab = Resources.Load("Prefabs/Weapons/Swords" + prefabs[tier]) as GameObject;
+		prefab = Resources.Load("Prefabs/Weapons/Swords/" + prefabs[tier]) as GameObject;
+		Debug.Log(prefab);
+		Debug.Log ("Prefabs/Weapons/Swords/" + prefabs [tier]);
 	}
 	public void OnEnable()
 	{
@@ -28,6 +30,10 @@ public class Sword : Equipment {
 
 	public override float GetDamage(){
 		return damage;
+	}
+
+	public override GameObject GetPrefab(){
+		return prefab;
 	}
 
 }

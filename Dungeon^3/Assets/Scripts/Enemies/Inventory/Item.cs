@@ -20,4 +20,7 @@ public class Item : ScriptableObject {
 	public virtual float GetDamage(){	
 		return 0;
 	}
+	public virtual GameObject GetPrefab(){	
+		return null;
+	}
 }
