@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 public class Inventory : MonoBehaviour {
-	public GameObject[] slots;
+	public GameObject[] slots = new GameObject[12];
 	public Item[] items;
 	private bool down;
 	private int slotDragged;
@@ -10,17 +10,26 @@ public class Inventory : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find("Player");
+		Debug.Log(player);
 		slotDragged = -1;
-		slots = new GameObject[12];
-		for (int i = 1; i <= slots.Length; i++) {
+		//slots = new GameObject[12];
+		/*for (int i = 1; i <= slots.Length; i++) {
 			slots [i-1] = GameObject.Find ("Slot (" + i+ ")");
-		}
+			Debug.Log(GameObject.Find("Slot (" + i+ ")"));
+			Debug.Log(slots[i-1]);
+		}*/
+
 		items = new Item[12];
 		items[0] = new Sword (0, slots [0]);
 		//Debug.Log(items [0].damage);		
 		items [1] = new Bow (0, slots [1]);
 		items [3] = new Sword (1, slots [3]);
 		AdjustSword ();
+	}
+
+	void OnLevelWasLoaded() {
+		player = GameObject.Find("Player");
+		AdjustSword();
 	}
 
 	// Update is called once per frame

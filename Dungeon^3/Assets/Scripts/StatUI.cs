@@ -7,7 +7,7 @@ public class StatUI : MonoBehaviour {
 	private GameObject player;
 
 	void Start() {
-		player = GameObject.Find("Player");
+		player = GameObject.Find("Stats");
 		displayStats = GetComponent<Text>();
 		updateStats();
 	}

@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour {
 	private Vector3 offset = new Vector3 (-20, 24,20);       
 
 	void Start () {
+		player = GameObject.Find("Player");
 		offset = transform.position - player.transform.position;
 	}
 

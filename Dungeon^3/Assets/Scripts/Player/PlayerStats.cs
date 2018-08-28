@@ -15,7 +15,13 @@ public class PlayerStats : MonoBehaviour {
 	public PlayerHealth healthScript;
 	public PlayerController playerScript;
 	//TODO: Assign statistics (i.e. speed, strength, etc. and have them incremented when character levels up)
+
 	public void Start(){
+		healthScript = GameObject.Find ("Health").GetComponent<PlayerHealth> ();
+		playerScript = GameObject.Find ("Player").GetComponent<PlayerController>();
+	}
+
+	void OnLevelWasLoaded() {
 		healthScript = GameObject.Find ("Health").GetComponent<PlayerHealth> ();
 		playerScript = GameObject.Find ("Player").GetComponent<PlayerController>();
 	}

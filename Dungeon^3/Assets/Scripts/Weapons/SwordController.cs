@@ -3,10 +3,14 @@ using System.Collections;
 
 public class SwordController: MonoBehaviour {
 	GameObject pivotPoint;
+	Inventory inventoryScript;
+	PlayerStats playerStats;
 
 	// Use this for initialization
 	void Start () {
 		pivotPoint = GameObject.Find("Pivot point");
+		inventoryScript = GameObject.Find("Inventory").GetComponent<Inventory>();
+		playerStats = GameObject.Find("Stats").GetComponent<PlayerStats>();
 	}
 
 	// Update is called once per frame
@@ -14,17 +18,19 @@ public class SwordController: MonoBehaviour {
 
 	}
 	void OnCollisionEnter(Collision col) {
-		print ("Colliding");
-		print ("Swrd swing: " + pivotPoint.GetComponent<SwordAnimation>().isSwinging);
-		print ("col: " + col.gameObject.tag );
-		if (col.gameObject.tag == "Enemy" && pivotPoint.GetComponent<SwordAnimation>().isSwinging) {
-			Item sword = GameObject.Find ("Player").GetComponent<Inventory> ().GetSword() ;
+		GameObject objectHit = col.gameObject;
+		if (objectHit.tag == "Enemy" && pivotPoint.GetComponent<SwordAnimation>().isSwinging) {
+			Item sword = inventoryScript.GetSword();
 			if (sword == null) {
 				return;
 			}
-			float swordsmanship = GameObject.Find ("Player").GetComponent<PlayerStats> ().swordsmanship;
-			print (sword.GetDamage ());
-			col.gameObject.GetComponent<Enemy>().Damage(sword.GetDamage()*(.7f+swordsmanship*.05f));
+			float swordsmanship = playerStats.swordsmanship;
+			objectHit.GetComponent<Enemy>().Damage(calculateDamage(sword.GetDamage(), swordsmanship));
 		}
+	}
+
+	private float calculateDamage(float sworddamage, float swordsmanship) {
+		// Do bowdamage * .7f, with an additional .05f in the multiple per 1 bowdamage increase
+		return sworddamage * (.7f+(swordsmanship*.05f));
 	}
 }

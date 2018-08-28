@@ -4,6 +4,6 @@ using System.Collections;
 
 public class NextLevelAfterFall : MonoBehaviour {
 	public void nextLevel() {
-		SceneManager.LoadScene("dungeon");
+		SceneManager.LoadScene("level02");
 	}
 }

@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour {
 	private Animator animator;
 	private bool falling;
 	private int fallCount;
+	[SerializeField] Inventory inventoryObject;
 
 	void Start() {
 		worldManager = GameObject.Find ("WorldManager");
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour {
 		controller = GetComponent<CharacterController>();
 		animator = GetComponentInChildren<Animator>();
 		animator.enabled = false;
+		inventoryObject = GameObject.Find("Inventory").GetComponent<Inventory>();
 	}
 
 	void Update() {
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour {
 
 
 			if (Input.GetMouseButtonDown (0)) {
-				if(GetComponentInChildren<Inventory>().GetBow() != null) {
+				if(inventoryObject.GetBow() != null) {
 					Fire ();
 				}
 			}
