@@ -32,8 +32,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update() {
-
-		if (!worldManager.GetComponent<UImanager> ().isPaused && !animator.enabled) {
+        Debug.Log(worldManager + "and " + animator);
+		if (!worldManager.GetComponent<UImanager>().isPaused && !animator.enabled) {
 			float inputX = Input.GetAxisRaw ("Horizontal");
 			float inputZ = Input.GetAxisRaw ("Vertical");
 			moveDirection = (inputZ * camForward + inputX * cam.right).normalized;

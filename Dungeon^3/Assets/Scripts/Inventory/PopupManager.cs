@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Class dedicated to making the buttons on the inventory and stat windows work
 public class PopupManager : MonoBehaviour {
 	public bool inventoryOpen;
 	public GameObject inventoryBackground;
 	public GameObject inventoryButton;
 	public void Start(){
 		inventoryOpen = true;
-		//toggleInventory ();
+		toggleInventory ();
 
 	}
 	public void toggleInventory()
