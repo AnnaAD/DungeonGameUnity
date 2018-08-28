@@ -3,7 +3,7 @@ using System.Collections;
 
 public class StatButtonControls : MonoBehaviour {
 	[SerializeField]
-	private GameObject player;
+	private PlayerStats playerStats;
 	private GameObject levelPanel;
 	private GameObject statDisplay;
 
@@ -11,12 +11,12 @@ public class StatButtonControls : MonoBehaviour {
 	public int levelsUp = 0;
 
 	void Start() {
-		player = GameObject.Find("Player");
+		playerStats = GameObject.Find("Stats").GetComponent<PlayerStats>();
 		statDisplay = GameObject.Find("StatText");
 	}
 
 	public void healthBoostClicked() {
-		player.GetComponent<PlayerStats>().updateHealthBoost(1);
+		playerStats.updateHealthBoost(1);
 		levelsUp--;
 		if (levelsUp < 1) {
 			gameObject.SetActive(false);
@@ -25,7 +25,7 @@ public class StatButtonControls : MonoBehaviour {
 	}
 
 	public void speedClicked() {
-		player.GetComponent<PlayerStats>().updateSpeed(1);
+		playerStats.updateSpeed(1);
 		levelsUp--;
 		if (levelsUp < 1) {
 			gameObject.SetActive(false);
@@ -34,7 +34,7 @@ public class StatButtonControls : MonoBehaviour {
 	}
 
 	public void vitalityClicked() {
-		player.GetComponent<PlayerStats>().updateVitality(1);
+		playerStats.updateVitality(1);
 		levelsUp--;
 		if (levelsUp < 1) {
 			gameObject.SetActive(false);
@@ -43,7 +43,7 @@ public class StatButtonControls : MonoBehaviour {
 	}
 
 	public void dexterityClicked() {
-		player.GetComponent<PlayerStats>().updateDexterity(1);
+		playerStats.updateDexterity(1);
 		levelsUp--;
 		if (levelsUp < 1) {
 			gameObject.SetActive(false);
@@ -52,7 +52,7 @@ public class StatButtonControls : MonoBehaviour {
 	}
 
 	public void swordsmanshipClicked() {
-		player.GetComponent<PlayerStats>().updateSwordsmanship(1);
+		playerStats.updateSwordsmanship(1);
 		levelsUp--;
 		if (levelsUp < 1) {
 			gameObject.SetActive(false);		
@@ -61,7 +61,7 @@ public class StatButtonControls : MonoBehaviour {
 	}
 
 	public void bowmanshipClicked() {
-		player.GetComponent<PlayerStats>().updateBowmanship(1);
+		playerStats.updateBowmanship(1);
 		levelsUp--;
 		if (levelsUp < 1) {
 			gameObject.SetActive(false);
