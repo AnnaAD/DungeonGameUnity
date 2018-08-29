@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 	private CharacterController controller;
 	private Animator animator;
 	private bool falling;
+    // How long player has been falling in ticks
 	private int fallCount;
 	[SerializeField] Inventory inventoryObject;
 
@@ -32,7 +33,6 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update() {
-        Debug.Log(worldManager + "and " + animator);
 		if (!worldManager.GetComponent<UImanager>().isPaused && !animator.enabled) {
 			float inputX = Input.GetAxisRaw ("Horizontal");
 			float inputZ = Input.GetAxisRaw ("Vertical");
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour {
 			moveDirection.y = 0;
 				controller.Move (moveDirection * Time.deltaTime);
 
-
+            // Movement
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			float ent = 100.0f;
 			if (plane.Raycast (ray, out ent)) {
@@ -103,4 +103,12 @@ public class PlayerController : MonoBehaviour {
 	public void incrementSpeed(float val){
 		speed = speed + val;
 	}
+
+    // When player has been killed
+   public void killPlayer()
+    {
+        animator.enabled = true;
+        // Tells animation player has been killed
+        animator.SetTrigger("StartDeathAnimation");
+    }
 }

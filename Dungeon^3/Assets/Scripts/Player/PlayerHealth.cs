@@ -8,13 +8,16 @@ public class PlayerHealth : MonoBehaviour {
 	private float healthTimer;
 	public int maxHealth;
 	public float regenRate;
+    private GameObject player;
 	// Use this for initialization
 	void Start () {
 		healthDisplay = GetComponent<Text>();
 		healthDisplay.text = "Health: " + Mathf.Floor(health) + "/"+maxHealth;
-		maxHealth = 100;
+		maxHealth = 1;
+        health = maxHealth;
 		regenRate = 1f;
 		UpdateHealth(0);
+        player = GameObject.Find("Player");
 	}
 	
 	// Update is called once per frame
@@ -31,12 +34,17 @@ public class PlayerHealth : MonoBehaviour {
 	public void UpdateHealth(float val) {
 		health += val;
 		healthDisplay.text = "Health: " + Mathf.Floor(health) + "/"+maxHealth;
+        if(health <= 0)
+        {
+            Debug.Log("PlayerHealth registers death");
+            player.GetComponent<PlayerController>().killPlayer();
+        }
 	}
 
 	public void incrementMaxHealth(int amount){
 		//incremented maxHealth
 		maxHealth = maxHealth + amount;
-		UpdateHealth (maxHealth - health);
+        health = maxHealth;
 	}
 	public void incrementRegenRate(float amount){
 		regenRate = regenRate + amount;

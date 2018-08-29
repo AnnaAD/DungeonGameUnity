@@ -21,4 +21,9 @@ public class LevelManager : MonoBehaviour {
         // Loads next scene in array "levels"
         UnityEngine.SceneManagement.SceneManager.LoadScene(levels[currentLevel]);
     }
+
+    public void endGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("menu");
+    }
 }
