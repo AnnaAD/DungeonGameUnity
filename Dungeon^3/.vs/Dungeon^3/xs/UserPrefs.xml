@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{2A3C97CA-270E-F22F-3E39-22D6A2AD239B}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Inventory/EquipCategories.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Weapons/ArrowBehavior.cs" Line="37" Column="1" />
+      <File FileName="Assets/Scripts/Inventory/Inventory.cs" Line="30" Column="25" />
+      <File FileName="Assets/Scripts/Inventory/Equipment.cs" Line="12" Column="3" />
+      <File FileName="Assets/Scripts/Inventory/Item.cs" Line="12" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Inventory/PopupManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Level/ChestController.cs" Line="21" Column="81" />
+      <File FileName="Assets/PickUp.cs" Line="19" Column="37" />
+      <File FileName="Assets/FixTextRotatation.cs" Line="15" Column="88" />
+      <File FileName="Assets/Scripts/Inventory/EquipCategories.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

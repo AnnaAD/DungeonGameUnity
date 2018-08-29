@@ -23,9 +23,9 @@ public class Sword : Equipment {
 		//These arrays represent the images in the Images/Swords folder and the damages corresponding to each sword
 		//The indices represent a specific type of sword, when adding new swords make sure to 
 		//add the location and the damage at the same location
-		spriteLocations=new string[] {"sword","gemSword"}; 
-		damages = new float[] {5f, 6f};
-		prefabs = new string[] {"sword","gemSword"};
+		spriteLocations=new string[] {"sword","gemSword","hammer","gemHammer"}; 
+		damages = new float[] {5f, 6f, 6f, 10f};
+		prefabs = new string[] {"sword","gemSword", "hammer", "gemHammer"};
 	}
 
 	public override float GetDamage(){
@@ -54,7 +54,7 @@ public class Bow : Equipment {
 	}
 	public void OnEnable()
 	{
-		spriteLocations = new string[]{ "testbow1" };
+		spriteLocations = new string[]{ "bow" };
 		damages = new float[] {1f};
 	}
 

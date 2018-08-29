@@ -20,10 +20,8 @@ public class Inventory : MonoBehaviour {
 		}*/
 
 		items = new Item[12];
-		items[0] = new Sword (0, slots [0]);
 		//Debug.Log(items [0].damage);		
 		items [1] = new Bow (0, slots [1]);
-		items [3] = new Sword (1, slots [3]);
 		AdjustSword ();
 	}
 
@@ -97,6 +95,17 @@ public class Inventory : MonoBehaviour {
 			AdjustSword ();
 		}
 	}
+
+    public void AddItem(int itemID, string type) {
+        for (int i = 4; i < items.Length; i++) {
+            if(items[i] == null) {
+                if(type == "sword") {
+                    items[i] = new Sword(itemID, slots[i]);
+                    return;
+                }
+            }
+        }
+    }
 
 	public Item GetSword(){
 		return items [0];
