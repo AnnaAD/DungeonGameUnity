@@ -3,9 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
-	public float health = 100f;
+	public float health;
 	private Text healthDisplay;
 	private float healthTimer;
+    // Updated from console
 	public int maxHealth;
 	public float regenRate;
     private GameObject player;
@@ -13,7 +14,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Start () {
 		healthDisplay = GetComponent<Text>();
 		healthDisplay.text = "Health: " + Mathf.Floor(health) + "/"+maxHealth;
-		maxHealth = 1;
+		
         health = maxHealth;
 		regenRate = 1f;
 		UpdateHealth(0);
@@ -31,15 +32,21 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 
-	public void UpdateHealth(float val) {
-		health += val;
-		healthDisplay.text = "Health: " + Mathf.Floor(health) + "/"+maxHealth;
-        if(health <= 0)
+    public void UpdateHealth(float val)
+    {
+        health += val;
+        healthDisplay.text = "Health: " + Mathf.Floor(health) + "/" + maxHealth;
+        if (health <= 0)
         {
-            Debug.Log("PlayerHealth registers death");
             player.GetComponent<PlayerController>().killPlayer();
+            healthDisplay.text = "Health: " + "0" + "/" + maxHealth;
         }
-	}
+        else
+        {
+            healthDisplay.text = "Health: " + Mathf.Floor(health) + "/" + maxHealth;
+
+        }
+    }
 
 	public void incrementMaxHealth(int amount){
 		//incremented maxHealth

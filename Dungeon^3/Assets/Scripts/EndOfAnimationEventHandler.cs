@@ -12,6 +12,7 @@ public class EndOfAnimationEventHandler : MonoBehaviour {
 
     public void endOfDeathAnimation()
     {
+        //TODO: Stop playerHealth from dropping
         GameObject.Find("WorldManager").GetComponent<LevelManager>().endGame();
     }
 }

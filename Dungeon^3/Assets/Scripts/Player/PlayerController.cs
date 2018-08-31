@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour {
 		controller = GetComponent<CharacterController>();
 		animator = GetComponentInChildren<Animator>();
 		animator.enabled = false;
+        Debug.Log(GameObject.Find("Inventory"));
 		inventoryObject = GameObject.Find("Inventory").GetComponent<Inventory>();
 	}
 

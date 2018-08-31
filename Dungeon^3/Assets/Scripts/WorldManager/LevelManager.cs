@@ -24,6 +24,8 @@ public class LevelManager : MonoBehaviour {
 
     public void endGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("menu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("deathmenu");
+        Object.Destroy(GameObject.Find("Canvas"));
+        Object.Destroy(this.gameObject);
     }
 }
