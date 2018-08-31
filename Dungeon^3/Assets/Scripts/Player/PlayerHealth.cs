@@ -3,18 +3,22 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
-	public float health = 100f;
+	public float health;
 	private Text healthDisplay;
 	private float healthTimer;
+    // Updated from console
 	public int maxHealth;
 	public float regenRate;
+    private GameObject player;
 	// Use this for initialization
 	void Start () {
 		healthDisplay = GetComponent<Text>();
 		healthDisplay.text = "Health: " + Mathf.Floor(health) + "/"+maxHealth;
-		maxHealth = 100;
+		
+        health = maxHealth;
 		regenRate = 1f;
 		UpdateHealth(0);
+        player = GameObject.Find("Player");
 	}
 	
 	// Update is called once per frame
@@ -28,15 +32,26 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 
-	public void UpdateHealth(float val) {
-		health += val;
-		healthDisplay.text = "Health: " + Mathf.Floor(health) + "/"+maxHealth;
-	}
+    public void UpdateHealth(float val)
+    {
+        health += val;
+        healthDisplay.text = "Health: " + Mathf.Floor(health) + "/" + maxHealth;
+        if (health <= 0)
+        {
+            player.GetComponent<PlayerController>().killPlayer();
+            healthDisplay.text = "Health: " + "0" + "/" + maxHealth;
+        }
+        else
+        {
+            healthDisplay.text = "Health: " + Mathf.Floor(health) + "/" + maxHealth;
+
+        }
+    }
 
 	public void incrementMaxHealth(int amount){
 		//incremented maxHealth
 		maxHealth = maxHealth + amount;
-		UpdateHealth (maxHealth - health);
+        health = maxHealth;
 	}
 	public void incrementRegenRate(float amount){
 		regenRate = regenRate + amount;

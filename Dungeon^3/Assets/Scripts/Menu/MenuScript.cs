@@ -3,10 +3,10 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class MenuScript : MonoBehaviour {
-
+    
 	public void Play() {
 		Debug.Log("clicked play");
-		SceneManager.LoadScene("AnnaTestLevel");
+		SceneManager.LoadScene("level01");
 	}
 
 	public void Endgame() {

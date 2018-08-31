@@ -27,7 +27,11 @@ public class Inventory : MonoBehaviour {
 
 	void OnLevelWasLoaded() {
 		player = GameObject.Find("Player");
-		AdjustSword();
+        // In case OnLevelWasLoaded runs before Start does
+        if (items.Length > 0)
+        {
+            AdjustSword();
+        }
 	}
 
 	// Update is called once per frame
@@ -119,6 +123,7 @@ public class Inventory : MonoBehaviour {
 		return items [2];
 	}
 
+    // Updates the Sword Model in the player's hand to match the sword in the inventory
 	public void AdjustSword() {
 		Debug.Log (player.transform.GetChild (0) );
 		if(player.transform.GetChild(0).GetChild(0).childCount > 0) {

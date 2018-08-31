@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelPersistence : MonoBehaviour {
 
-	private static bool created = false;
+	private bool created = false;
 
 	void Awake()
 	{
