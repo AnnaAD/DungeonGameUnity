@@ -5,12 +5,14 @@ public class Enemy : MonoBehaviour {
 
 	public float health;
 	public int damage;
-	public Rigidbody rBody;
+    public float speed;
+    public Rigidbody rBody;
 	public GameObject player;
 	private GameObject playerHealth;
 	private GameObject playerXP;
 	private GameObject deathEmitter;
 	public int xp;
+    [SerializeField] private float sightRange;
 	// Use this for initialization
 	protected void Start () {
 		rBody = GetComponent<Rigidbody> ();
@@ -48,15 +50,15 @@ public class Enemy : MonoBehaviour {
 		instance.GetComponent<Renderer>().material = gameObject.GetComponent<Renderer> ().material;
 
 		Destroy(instance,1.5f);
-        DropManager.MakeDrop(transform.position,0);
+        DropManager.MakeDrop(transform.position,xp,false);
 		Destroy(gameObject);
 	}
 
 	public bool CanSeePlayer(){
-
-		RaycastHit hit;
+        //print(Vector3.Distance(transform.position, player.transform.position));
+        RaycastHit hit;
 		if(Physics.Linecast(transform.position, player.transform.position, out hit)) {
-			if(hit.collider.gameObject.name == "Player") {
+            if (hit.collider.gameObject.name == "Player" && Vector3.Distance(transform.position, player.transform.position) < sightRange) {
 				return true;
 			} else {
 				return false;

@@ -5,7 +5,6 @@ public class GreenSlime : Enemy {
 	private Vector3 lastSeen;
 	protected bool seen;
 	private bool checkedLastSeen;
-	public float speed;
 	// Update is called once per frame
 	new protected void Start(){
 		base.Start();
@@ -26,8 +25,9 @@ public class GreenSlime : Enemy {
 			checkedLastSeen = false;
 		
 		} else {
-			//TODO: Fix this as it never actually gets to the lastSeen point
-			if(Vector3.Distance(transform.position,lastSeen) < 5f) {
+            //TODO: Fix this as it never actually gets to the lastSeen point
+            rBody.velocity = Vector3.zero;
+			/*if(Vector3.Distance(transform.position,lastSeen) < 5f) {
 				checkedLastSeen = true;
 			}
 
@@ -46,9 +46,9 @@ public class GreenSlime : Enemy {
 				/* if(Physics.Raycast(transform.position, transform.forward, 3f)) {
 					transform.Rotate(new Vector3(0,15,0));
 					Debug.Log("turning?");
-				} */
+				} 
 					
-			}
+			}*/
 
 
 		}

@@ -4,7 +4,6 @@ using System.Collections;
 public class BossSlime : Enemy {
 
 	private bool seen;
-	public float speed;
 
 	[SerializeField]
 	private GameObject SlimePrefab;

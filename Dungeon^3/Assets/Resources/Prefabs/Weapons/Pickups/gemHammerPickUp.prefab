@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 114689646802065122}
   - component: {fileID: 54889267378555748}
   m_Layer: 0
-  m_Name: gemHammerPickup
+  m_Name: gemHammerPickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

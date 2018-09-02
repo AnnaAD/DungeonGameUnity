@@ -16,25 +16,32 @@ public class PurpleSlime : Enemy {
 	// Update is called once per frame
 	void Update () {
 		counter+=Time.deltaTime;
-		transform.LookAt(player.transform);
 
-		//Debug.Log(Vector3.Distance(player.transform.position,transform.position));
-		if(Vector3.Distance(player.transform.position,transform.position) > 5f) {
-			rBody.velocity = transform.forward * 3;
-		} else if(Vector3.Distance(player.transform.position,transform.position) < 2f) {
-			rBody.velocity = transform.forward * -3;
-		} else {
-			rBody.velocity = Vector3.zero;
-		}
+        if (CanSeePlayer()) {
+            transform.LookAt(player.transform);
+
+            //Debug.Log(Vector3.Distance(player.transform.position,transform.position));
+            if (Vector3.Distance(player.transform.position, transform.position) > 5f)
+            {
+                rBody.velocity = transform.forward * speed;
+            }
+            else if (Vector3.Distance(player.transform.position, transform.position) < 2f)
+            {
+                rBody.velocity = transform.forward * -speed;
+            }
+            else
+            {
+                rBody.velocity = Vector3.zero;
+            }
 
 
 
-		if(counter > timeBetweenShots) {
-			counter = 0;
-			if(CanSeePlayer()) {
-				Shoot();
-			}
-		}
+            if (counter > timeBetweenShots)
+            {
+                counter = 0;
+                Shoot();
+            }
+        }
 
 
 		transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);

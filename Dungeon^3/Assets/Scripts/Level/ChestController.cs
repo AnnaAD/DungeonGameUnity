@@ -8,6 +8,8 @@ public class ChestController : MonoBehaviour {
     [SerializeField] private float chestRange;
 	[SerializeField] private GameObject player;
     [SerializeField] private GameObject keyText;
+    [SerializeField] private float chestLevel;
+
     private bool opened;
 
 	// Use this for initialization
@@ -27,7 +29,9 @@ public class ChestController : MonoBehaviour {
 					animator.SetTrigger("Open");
 					Debug.Log("trying to open");
 					chestOpen = true;
-                    DropManager.MakeDrop(new Vector3(transform.position.x, transform.position.y, transform.position.z), 0);
+                    if (!chestOpen) {
+                        DropManager.MakeDrop(transform.position, chestLevel,true);
+                    }
                     opened = true;
 				} else {
 					animator.SetTrigger("Close");

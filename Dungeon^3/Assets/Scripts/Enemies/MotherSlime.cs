@@ -8,7 +8,7 @@ public class MotherSlime : GreenSlime {
 	// Use this for initialization
 	new void Start () {
 		children = Random.Range(4,7);
-		print (children);
+		//print (children);
 		base.Start ();
 	}
 	
@@ -23,8 +23,9 @@ public class MotherSlime : GreenSlime {
 			transform.position = new Vector3 (transform.position.x, .75f, transform.position.z);
 
 		} else {
-			rBody.velocity = transform.forward * 1;
-			transform.Rotate (new Vector3 (0, (Random.value * 2) - 1, 0));	
+            rBody.velocity = Vector3.zero;
+			/*rBody.velocity = transform.forward * 1;
+			transform.Rotate (new Vector3 (0, (Random.value * 2) - 1, 0));*/	
 		}
 
 	}
