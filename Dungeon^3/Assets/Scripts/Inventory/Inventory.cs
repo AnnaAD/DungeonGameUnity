@@ -20,20 +20,14 @@ public class Inventory : MonoBehaviour {
 		}*/
 
 		items = new Item[12];
-		items[0] = new Sword (0, slots [0]);
 		//Debug.Log(items [0].damage);		
 		items [1] = new Bow (0, slots [1]);
-		items [3] = new Sword (1, slots [3]);
 		AdjustSword ();
 	}
 
 	void OnLevelWasLoaded() {
 		player = GameObject.Find("Player");
-        // In case OnLevelWasLoaded runs before Start does
-        if (items.Length > 0)
-        {
-            AdjustSword();
-        }
+		AdjustSword();
 	}
 
 	// Update is called once per frame
@@ -102,6 +96,17 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
+    public void AddItem(int itemID, string type) {
+        for (int i = 4; i < items.Length; i++) {
+            if(items[i] == null) {
+                if(type == "sword") {
+                    items[i] = new Sword(itemID, slots[i]);
+                    return;
+                }
+            }
+        }
+    }
+
 	public Item GetSword(){
 		return items [0];
 	}
@@ -114,7 +119,6 @@ public class Inventory : MonoBehaviour {
 		return items [2];
 	}
 
-    // Updates the Sword Model in the player's hand to match the sword in the inventory
 	public void AdjustSword() {
 		Debug.Log (player.transform.GetChild (0) );
 		if(player.transform.GetChild(0).GetChild(0).childCount > 0) {

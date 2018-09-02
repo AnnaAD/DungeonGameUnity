@@ -5,21 +5,20 @@ public class ChestController : MonoBehaviour {
 
 	Animator animator;
 	private bool chestOpen;
-	[SerializeField]
-	private GameObject player;
-	private GameObject keyText;
+    [SerializeField] private float chestRange;
+	[SerializeField] private GameObject player;
+    [SerializeField] private GameObject keyText;
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
 		chestOpen = false;
 		player = GameObject.Find("Player");
-		keyText = GameObject.Find("Key");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(Vector3.Distance(player.transform.position,transform.position) < 5f) {
+		if(Vector3.Distance(player.transform.position,transform.position) < chestRange) {
 			keyText.SetActive(true);
 			if(Input.GetKeyDown(KeyCode.E)) {
 				if(chestOpen == false) {
