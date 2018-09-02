@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1436,7 +1436,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e347fed177f40a49c115091c241639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestRange: 0
   player: {fileID: 0}
+  keyText: {fileID: 0}
 --- !u!1001 &572565825
 Prefab:
   m_ObjectHideFlags: 0
@@ -3139,6 +3141,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1528325971482060, guid: 3c5df1adda121c44581d16a535d5543f,
     type: 2}
   m_PrefabInternal: {fileID: 79445212}
+--- !u!114 &1248869359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1248869358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2332af9b3ed8843dd90eec8930cf4635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1248869360
 MonoBehaviour:
   m_ObjectHideFlags: 0

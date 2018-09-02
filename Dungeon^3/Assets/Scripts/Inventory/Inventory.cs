@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find("Player");
-		Debug.Log(player);
+		//Debug.Log(player);
 		slotDragged = -1;
 		//slots = new GameObject[12];
 		/*for (int i = 1; i <= slots.Length; i++) {
@@ -120,7 +120,7 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public void AdjustSword() {
-		Debug.Log (player.transform.GetChild (0) );
+		//Debug.Log (player.transform.GetChild (0) );
 		if(player.transform.GetChild(0).GetChild(0).childCount > 0) {
 			Destroy(player.transform.GetChild(0).GetChild(0).GetChild(0).gameObject);
 		}

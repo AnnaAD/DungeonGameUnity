@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour {
 		instance.GetComponent<Renderer>().material = gameObject.GetComponent<Renderer> ().material;
 
 		Destroy(instance,1.5f);
+        DropManager.MakeDrop(transform.position,0);
 		Destroy(gameObject);
 	}
 
