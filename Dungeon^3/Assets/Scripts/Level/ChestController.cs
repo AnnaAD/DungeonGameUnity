@@ -8,12 +8,14 @@ public class ChestController : MonoBehaviour {
     [SerializeField] private float chestRange;
 	[SerializeField] private GameObject player;
     [SerializeField] private GameObject keyText;
+    private bool opened;
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
 		chestOpen = false;
 		player = GameObject.Find("Player");
+        opened = false;
 	}
 	
 	// Update is called once per frame
@@ -25,6 +27,8 @@ public class ChestController : MonoBehaviour {
 					animator.SetTrigger("Open");
 					Debug.Log("trying to open");
 					chestOpen = true;
+                    DropManager.MakeDrop(new Vector3(transform.position.x, transform.position.y, transform.position.z), 0);
+                    opened = true;
 				} else {
 					animator.SetTrigger("Close");
 					Debug.Log("trying to close");
