@@ -19,13 +19,13 @@ public class PopupManager : MonoBehaviour {
             //Closes Window
             this.GetComponent<Transform>().Translate( new Vector3 (0f, -174.4f, 0f));
 			windowOpen = false;
-		} else {
+            buttonAnimator.SetBool("EndAnimationBoolean", false);
+        } else {
             // Opens Window
 			this.GetComponent<Transform>().Translate(new Vector3 (0f, 174.4f, 0f));
 			windowOpen = true;
             // Ends animation for a new item or stat in the button
-            if(buttonAnimator!= null)
-                buttonAnimator.SetTrigger("EndAnimationTrigger");
+           buttonAnimator.SetBool("EndAnimationBoolean", true);
         }
 
 	}

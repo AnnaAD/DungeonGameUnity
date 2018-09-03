@@ -83,6 +83,7 @@ public class Inventory : MonoBehaviour {
                 Instantiate(items[slotDragged].GetDropPrefab() as GameObject, player.GetComponent<Transform>().position, Quaternion.identity);
                 Destroy(items[slotDragged].gameObject);
                 items[slotDragged] = null;
+                AdjustSword();
             } else  {
 				//Puts the item back in the original slot
 				items [slotDragged].gameObject.GetComponent<Transform> ().SetParent (slots [slotDragged].GetComponent<Transform> (), false);
