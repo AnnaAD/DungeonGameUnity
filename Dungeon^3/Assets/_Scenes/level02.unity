@@ -1302,18 +1302,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 4000013379873650, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013379873650, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013379873650, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
   m_IsPrefabAsset: 0
@@ -1944,18 +1932,6 @@ Prefab:
       propertyPath: m_Name
       value: PurpleSlime (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4000013379873650, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013379873650, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013379873650, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
   m_IsPrefabAsset: 0
@@ -2298,18 +2274,6 @@ Prefab:
       propertyPath: m_Name
       value: PurpleSlime (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4000013379873650, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013379873650, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013379873650, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
   m_IsPrefabAsset: 0
@@ -2572,18 +2536,6 @@ Prefab:
     - target: {fileID: 1000010359215196, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
       propertyPath: m_Name
       value: PurpleSlime (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013379873650, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013379873650, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013379873650, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22c33bc9668fd49cc93579dac8c1a2a6, type: 2}

@@ -5,7 +5,7 @@ public class PurpleSlime : Enemy {
 
 	public GameObject SlimeArrow;
 	public Transform bulletSpawn;
-	public float timeBetweenShots;
+    public float timeBetweenShots = 0.5f;
 	private float counter;
 
 	public override void loadResources() {

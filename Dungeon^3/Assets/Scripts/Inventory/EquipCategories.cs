@@ -10,7 +10,7 @@ public class Sword : Equipment {
     //The indices represent a specific type of sword, when adding new swords make sure to 
     //add the location and the damage at the same location
     public static string [] spriteLocations = new string[] {"sword","gemSword","hammer","gemHammer"};
-    public static float[] damages = damages = new float[] { 5f, 6f, 6f, 10f };
+    public static float[] damages = damages = new float[] { 5f, 10f, 15f, 30f };
     public static string[] prefabs = new string[] { "sword", "gemSword", "hammer", "gemHammer" };
 
 

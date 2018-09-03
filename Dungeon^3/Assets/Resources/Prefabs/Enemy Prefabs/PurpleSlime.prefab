@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010359215196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41, y: 0, z: 19.9}
+  m_LocalPosition: {x: 21.5, y: 0, z: 18.2}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4000012110411398}
@@ -181,4 +181,4 @@ MonoBehaviour:
   sightRange: 7
   SlimeArrow: {fileID: 1000013761725166, guid: dd5c8d1d50149419b90607f1b3627503, type: 2}
   bulletSpawn: {fileID: 4000012110411398}
-  timeBetweenShots: 0
+  timeBetweenShots: 0.5
