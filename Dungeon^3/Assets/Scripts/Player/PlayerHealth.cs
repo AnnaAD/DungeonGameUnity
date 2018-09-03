@@ -13,11 +13,9 @@ public class PlayerHealth : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		healthDisplay = GetComponent<Text>();
-		healthDisplay.text = "Health: " + Mathf.Floor(health) + "/"+maxHealth;
-		
+        refreshHealthDisplay();
         health = maxHealth;
 		regenRate = 1f;
-		UpdateHealth(0);
         player = GameObject.Find("Player");
 	}
 	
@@ -35,7 +33,7 @@ public class PlayerHealth : MonoBehaviour {
     public void UpdateHealth(float val)
     {
         health += val;
-        healthDisplay.text = "Health: " + Mathf.Floor(health) + "/" + maxHealth;
+        refreshHealthDisplay();
         if (health <= 0)
         {
             player.GetComponent<PlayerController>().killPlayer();
@@ -43,8 +41,7 @@ public class PlayerHealth : MonoBehaviour {
         }
         else
         {
-            healthDisplay.text = "Health: " + Mathf.Floor(health) + "/" + maxHealth;
-
+            refreshHealthDisplay();
         }
     }
 
@@ -52,8 +49,17 @@ public class PlayerHealth : MonoBehaviour {
 		//incremented maxHealth
 		maxHealth = maxHealth + amount;
         health = maxHealth;
-	}
+        refreshHealthDisplay();
+    }
+
 	public void incrementRegenRate(float amount){
 		regenRate = regenRate + amount;
 	}
+
+    /// <summary>
+    ///  Updates the display text to match variables here
+    /// </summary>
+    private void refreshHealthDisplay() {
+        healthDisplay.text = "Health: " + Mathf.Floor(health) + "/" + maxHealth;
+    }
 }
