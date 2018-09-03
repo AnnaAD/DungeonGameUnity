@@ -18,6 +18,11 @@ public class PlayerHealth : MonoBehaviour {
 		regenRate = 1f;
         player = GameObject.Find("Player");
 	}
+
+    void OnLevelWasLoaded()
+    {
+        player = GameObject.Find("Player");
+    }
 	
 	// Update is called once per frame
 	void Update () {

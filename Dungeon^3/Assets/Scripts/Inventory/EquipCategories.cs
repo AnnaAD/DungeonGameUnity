@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine.UI;
 public class Sword : Equipment {
 	new public float damage;
-    new public string type;
     
 
     //These arrays represent the images in the Images/Swords folder and the damages corresponding to each sword
@@ -51,12 +50,10 @@ public class Sword : Equipment {
 }
 
 public class Bow : Equipment {
-	new public float damage;
 	public static string[] spriteLocations;
 	public static float[] damages;
-	public string[] prefab;
+	public string[] prefabs;
 	// Use this for initialization
-	new public string type;
 	public Bow (int tier,GameObject inventorySlotObject) : base(tier,inventorySlotObject) {
 
 		gameObject.GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Images/Bows/"+spriteLocations [tier]);
@@ -77,24 +74,25 @@ public class Bow : Equipment {
 }
 
 public class Armor : Equipment {
-	public float protection;
+	/*public float protection;
 	public static string[] spriteLocations; 
 	public static float[] protections;
-	public string[] prefab;
-
+	public string[] prefabs;
+    /*/
 	// Use this for initialization
 	public Armor (int tier,GameObject inventorySlotObject) : base(tier,inventorySlotObject) {
 
-		gameObject.GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Images/Armors/" + spriteLocations [tier]);
-		protection=protections[tier];
+		//gameObject.GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Images/Armors/" + spriteLocations [tier]);
+		//protection=protections[tier];
 
 
 	}
+    /*
 	public void OnEnable()
 	{
 
 		protections = new float[] {};
 		spriteLocations = new string[]{ };
 	}
-
+    */
 }
