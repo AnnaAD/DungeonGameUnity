@@ -12,7 +12,7 @@ public class LevelPersistence : MonoBehaviour {
 		{
 			DontDestroyOnLoad(this.gameObject);
 			created = true;
-			Debug.Log("Awake: " + this.gameObject);
+			// Debug.Log("Awake: " + this.gameObject);
 		}
 	}
 	

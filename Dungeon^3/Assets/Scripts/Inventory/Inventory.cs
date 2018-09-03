@@ -9,7 +9,8 @@ public class Inventory : MonoBehaviour {
 	private GameObject player;
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find("Player");
+        
+        player = GameObject.Find("Player");
 		//Debug.Log(player);
 		slotDragged = -1;
 		//slots = new GameObject[12];
@@ -20,14 +21,19 @@ public class Inventory : MonoBehaviour {
 		}*/
 
 		items = new Item[12];
-		//Debug.Log(items [0].damage);		
+        //Debug.Log(items [0].damage);		
+        items[0] = new Sword(0, slots[0]);
 		items [1] = new Bow (0, slots [1]);
 		AdjustSword ();
 	}
 
 	void OnLevelWasLoaded() {
-		player = GameObject.Find("Player");
-		AdjustSword();
+        player = GameObject.Find("Player");
+        // Prevents an error of this running before start
+        if (items.Length > 0)
+        {
+            AdjustSword();
+        }
 	}
 
 	// Update is called once per frame
@@ -84,13 +90,16 @@ public class Inventory : MonoBehaviour {
 	//Switches the two items at indices item1 item2
 	public void SwitchItems(int item1,int item2) {
 		items [item1].gameObject.GetComponent<Transform> ().SetParent (slots [item2].GetComponent<Transform> (), false);
+        // Switches the items within the array
 		Item temp = items [item2];
 		items [item2] = items [item1];
 		items [item1] = temp;
+        // All items are children of the slots they're in. This updates that to match.
 		if (items [item1] != null) {
 			items [item1].gameObject.GetComponent<Transform> ().SetParent (slots [item1].GetComponent<Transform> (), false);
 		}
 		items [item2].gameObject.GetComponent<Transform> ().localPosition = new Vector2 (0f, 0f);
+        // If the items are swords, updates the player's sword model
 		if (item1 == 0 || item2 == 0) {
 			AdjustSword ();
 		}
@@ -119,6 +128,8 @@ public class Inventory : MonoBehaviour {
 		return items [2];
 	}
 
+
+    //Updates the player's sword model to match the one equipped
 	public void AdjustSword() {
 		//Debug.Log (player.transform.GetChild (0) );
 		if(player.transform.GetChild(0).GetChild(0).childCount > 0) {

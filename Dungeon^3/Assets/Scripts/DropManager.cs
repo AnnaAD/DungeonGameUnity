@@ -16,23 +16,26 @@ public class DropManager : MonoBehaviour {
     //enemyLevel acts as an added percent chance of having drop
     //enemyLevel then acts as percent chance of iterating through list to next spot. 
     //enemyLevel decreases by i*10%, where i is place in list, giving more likelyhood of stopping at later items
+    // Used by Enemy
+    // Assume drops has at least 1 item. 
     public static void MakeDrop(Vector3 position, double enemyLevel, bool alwaysDrop) {
         if (!alwaysDrop) {
-            if (!(Random.Range(0, 100) <= enemyLevel)) {
-                Debug.Log("no item");
+            // Higher enemy level, higher chance of item. 
+            if (Random.Range(0, 100) >= enemyLevel) {
+                //Debug.Log("No item dropped");
                 return;
             }
         }
         float rand = Random.Range(0, 100);
-        int i = Mathf.RoundToInt(rand);
-        Debug.Log("random: " + rand);
+        // i represents the index of drops to drop. A higher i means a better item. 
+        int i = 1;
+        //Debug.Log("random: " + rand);
         while (rand <= enemyLevel && i < drops.Count-1) {
             enemyLevel -= i*10;
-            Debug.Log("random: " + rand);
             i++;
             rand = Random.Range(0, 100);
         }
-        Debug.Log("item: " + i);
+        // Debug.Log("item: " + i);
         Instantiate(drops[i] as GameObject, position, Quaternion.identity);
 	}
 

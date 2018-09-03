@@ -871,7 +871,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114968485378567440}
-        m_MethodName: toggleInventory
+        m_MethodName: toggleWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1379,7 +1379,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114795166434016772}
-        m_MethodName: toggleInventory
+        m_MethodName: toggleWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2165,9 +2165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065315fad0310504b8f8e698bc6fe6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryOpen: 0
-  inventoryBackground: {fileID: 1539563744238470}
-  inventoryButton: {fileID: 1672590054571584}
+  windowOpen: 0
 --- !u!114 &114825439577273564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2430,9 +2428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065315fad0310504b8f8e698bc6fe6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryOpen: 0
-  inventoryBackground: {fileID: 1456663823722068}
-  inventoryButton: {fileID: 1899701222990284}
+  windowOpen: 0
 --- !u!222 &222054361770816674
 CanvasRenderer:
   m_ObjectHideFlags: 1

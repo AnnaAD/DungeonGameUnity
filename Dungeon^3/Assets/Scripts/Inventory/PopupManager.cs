@@ -2,27 +2,26 @@
 using System.Collections;
 
 // Class dedicated to making the buttons on the inventory and stat windows work
+// Should be attached to a class containing all elements of a UI Window like Stats and Inventory (both under Canvas)
+// Use by putting in the action attribute of button
 public class PopupManager : MonoBehaviour {
-	public bool inventoryOpen;
-	public GameObject inventoryBackground;
-	public GameObject inventoryButton;
-	public void Start(){
-		inventoryOpen = true;
-		toggleInventory ();
+	public bool windowOpen;
 
+    public void Start(){
+		windowOpen = true;
+        //In scene, window is open, this makes it closed at the start of game
+		toggleWindow ();
 	}
-	public void toggleInventory()
-	{	
-		if(inventoryOpen){
-			inventoryButton.GetComponent<Transform>().Translate( new Vector3 (0f, -174.4f, 0f));
-			inventoryBackground.SetActive (false);
-			inventoryOpen = false;
 
+	public void toggleWindow()
+	{	//Slides entire object up or down just enough to hide only button or all but button
+		if(windowOpen){
+			this.GetComponent<Transform>().Translate( new Vector3 (0f, -174.4f, 0f));
+			windowOpen = false;
 		} else {
-			inventoryButton.GetComponent<Transform>().Translate(new Vector3 (0f, 174.4f, 0f));
-
-			inventoryBackground.SetActive (true);
-			inventoryOpen = true;
+			this.GetComponent<Transform>().Translate(new Vector3 (0f, 174.4f, 0f));
+			windowOpen = true;
 		}
 	}
+
 }

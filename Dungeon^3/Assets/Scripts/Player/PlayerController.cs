@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour {
 			moveDirection *= speed;
 			moveDirection.y = 0;
 				controller.Move (moveDirection * Time.deltaTime);
-
             // Movement
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			float ent = 100.0f;
@@ -56,7 +55,6 @@ public class PlayerController : MonoBehaviour {
 
 			}
 
-
 			if (Input.GetMouseButtonDown (0)) {
 				if(inventoryObject.GetBow() != null) {
 					Fire ();
@@ -65,12 +63,12 @@ public class PlayerController : MonoBehaviour {
 			if (Input.GetMouseButtonDown (1)) {
 				pivotPoint.GetComponent<SwordAnimation>().Swing();
 			}
+            // Resets y position to .5f
 			transform.position = new Vector3 (transform.position.x, 0.5f, transform.position.z);
 		
 		} else if (!worldManager.GetComponent<UImanager> ().isPaused && falling) {
 			controller.Move(transform.forward * 0.05f);
 			fallCount++;
-
 			if(fallCount > 20) {
 				falling = false;
 			}

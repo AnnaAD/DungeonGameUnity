@@ -180,9 +180,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011072862840}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 20.489088, y: 0.25000006, z: 3.9500046}
-  m_LocalScale: {x: 0.35000044, y: 0.35, z: 0.35000044}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.5000001, z: 0.4}
+  m_LocalScale: {x: 0.035000052, y: 0.7, z: 0.035000052}
   m_Children:
   - {fileID: 4000010093788840}
   - {fileID: 4000014191111162}
@@ -581,3 +581,4 @@ MonoBehaviour:
   chestRange: 1
   player: {fileID: 0}
   keyText: {fileID: 1784660963831614}
+  chestLevel: 50

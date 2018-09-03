@@ -29,8 +29,9 @@ public class ChestController : MonoBehaviour {
 					animator.SetTrigger("Open");
 					Debug.Log("trying to open");
 					chestOpen = true;
-                    if (!chestOpen) {
-                        DropManager.MakeDrop(transform.position, chestLevel,true);
+                    if (!opened) {
+                        Vector3 dropPosition = transform.position + transform.forward.normalized*-1;
+                        DropManager.MakeDrop(dropPosition, chestLevel,true);
                     }
                     opened = true;
 				} else {

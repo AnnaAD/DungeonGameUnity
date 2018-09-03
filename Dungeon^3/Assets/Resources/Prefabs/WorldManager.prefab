@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4010565528588676}
   - component: {fileID: 114916261116395296}
   - component: {fileID: 114221029155108848}
+  - component: {fileID: 114851932371877162}
+  - component: {fileID: 114551648111668782}
+  - component: {fileID: 114746045050450530}
   m_Layer: 0
   m_Name: WorldManager
   m_TagString: Untagged
@@ -54,6 +57,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPaused: 0
   menu: {fileID: 0}
+--- !u!114 &114551648111668782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528325971482060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6abdfbd539b2d994bbe2c1fc5bb9359d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114746045050450530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528325971482060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356775c169032dc4dbbd0cc490a87c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114851932371877162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528325971482060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2332af9b3ed8843dd90eec8930cf4635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114916261116395296
 MonoBehaviour:
   m_ObjectHideFlags: 1
