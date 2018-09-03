@@ -35,9 +35,9 @@ public class UImanager : MonoBehaviour {
 
             // Unpauses game
             isPaused = false;
-            Time.timeScale = 1.0f;
+            Time.timeScale = 1.0f;  
             menu.SetActive(false);
-		}
+        }
 	}
 
     public void Endgame()
