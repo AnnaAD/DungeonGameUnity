@@ -7,6 +7,7 @@ public class BossSlime : Enemy {
 
 	[SerializeField]
 	private GameObject SlimePrefab;
+    private float timeSinceLastSlimes;
 
 	// Update is called once per frame
 	void Update () {
@@ -19,7 +20,14 @@ public class BossSlime : Enemy {
 			rBody.velocity = transform.forward * speed;
 			transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
 
-		} else {
+            if(timeSinceLastSlimes > 15) {
+                Instantiate(SlimePrefab, transform.position + new Vector3(Random.Range(1f, 2.5f), 0f, Random.Range(1f, 2.5f)), Quaternion.identity);
+                Instantiate(SlimePrefab, transform.position + new Vector3(Random.Range(1f, 2.5f), 0f, Random.Range(1f, 2.5f)), Quaternion.identity);
+                Instantiate(SlimePrefab, transform.position + new Vector3(Random.Range(1f, 2.5f), 0f, Random.Range(1f, 2.5f)), Quaternion.identity);
+            }
+
+
+        } else {
 			
 				//idle mode
 				//Debug.Log("idle: " + name);
@@ -34,6 +42,7 @@ public class BossSlime : Enemy {
 		}
 		//Debug.Log(lastSeen);
 		//Debug.Log(checkedLastSeen);
+        timeSinceLastSlimes += Time.deltaTime;
 	}
 
 	void OnCollsionEnter(Collision col) {
