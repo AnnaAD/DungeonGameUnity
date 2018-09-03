@@ -45,15 +45,20 @@ public class Inventory : MonoBehaviour {
 
 	}
 	//Checks all the slots to see if the object is within maxDistance of them.
-	private int CheckSlots(GameObject item,int maxDistance)
+    // Returns 0-11 for a slot, -1 for no slot, or -2 to drop the item
+	private int CheckSlots(GameObject item, int maxDistance)
 	{
-		for (int i = 0; i < slots.Length; i++) {
-			Transform trans1 = slots [i].GetComponent<Transform> ();
-			Transform trans2 = item.GetComponent<Transform> ();
-			if (Mathf.Abs (trans1.position.x - trans2.position.x) < maxDistance && Mathf.Abs (trans1.position.y - trans2.position.y) < maxDistance) {
+        Transform itemTransform = item.GetComponent<Transform>();
+        for (int i = 0; i < slots.Length; i++) {
+			Transform slotTransform = slots [i].GetComponent<Transform> ();
+			if (Mathf.Abs (slotTransform.position.x - itemTransform.position.x) < maxDistance && Mathf.Abs (slotTransform.position.y - itemTransform.position.y) < maxDistance) {
 				return(i);
 			}
 		}
+        if (Vector3.Distance(itemTransform.position, slots[0].GetComponent<Transform>().position) > 150)  {
+            // When the item is so far away it should be dropped
+            return -2;
+        }
 		return -1;
 	}
 
@@ -66,13 +71,19 @@ public class Inventory : MonoBehaviour {
 		} else if (slotDragged != -1 ) {
 			//slot is the slot the item is being dragged into, 0-11 or -1 for no slot
 			int slot = CheckSlots (items [slotDragged].gameObject, 20);
-			//Checks to see if it is being dragged into a valid slot
-			if (slot != -1 
-			&&((slot!=0||items[slotDragged].GetType()==typeof(Sword) )&&(slotDragged!=0||(items[slot]==null||items[slot].GetType()==typeof(Sword) )))
-			&&((slot!=1||items[slotDragged].GetType()==typeof(Bow) )&&(slotDragged!=1||(items[slot]==null||items[slot].GetType()==typeof(Bow))))
-			&&((slot!=2||items[slotDragged].GetType()==typeof(Armor) )&&(slotDragged!=2||(items[slot]==null||items[slot].GetType()==typeof(Armor))))) {
-				SwitchItems (slotDragged, slot);
-			} else {
+            //Checks to see if it is being dragged into a valid slot
+            if (slot >= 0 
+            && ((slot != 0 || items[slotDragged].GetType() == typeof(Sword)) && (slotDragged != 0 || (items[slot] == null || items[slot].GetType() == typeof(Sword))))
+            && ((slot != 1 || items[slotDragged].GetType() == typeof(Bow)) && (slotDragged != 1 || (items[slot] == null || items[slot].GetType() == typeof(Bow))))
+            && ((slot != 2 || items[slotDragged].GetType() == typeof(Armor)) && (slotDragged != 2 || (items[slot] == null || items[slot].GetType() == typeof(Armor))))) {
+                SwitchItems(slotDragged, slot);
+            } else if (slot == -2 && items[slotDragged].GetType() == typeof(Sword)) {
+                Debug.Log("Item dropped far away from first slot");
+                Debug.Log("SlotDragged " + slotDragged + " + items[slotDragged] " + items[slotDragged] + " prefab " + items[slotDragged].GetDropPrefab());
+                Instantiate(items[slotDragged].GetDropPrefab() as GameObject, player.GetComponent<Transform>().position, Quaternion.identity);
+                Destroy(items[slotDragged].gameObject);
+                items[slotDragged] = null;
+            } else  {
 				//Puts the item back in the original slot
 				items [slotDragged].gameObject.GetComponent<Transform> ().SetParent (slots [slotDragged].GetComponent<Transform> (), false);
 				items [slotDragged].gameObject.GetComponent<Transform> ().localPosition = new Vector2 (0f, 0f);

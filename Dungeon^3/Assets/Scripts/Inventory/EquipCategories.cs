@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Sword : Equipment {
 	new public float damage;
     new public string type;
-    new public GameObject prefab;
+    
 
     //These arrays represent the images in the Images/Swords folder and the damages corresponding to each sword
     //The indices represent a specific type of sword, when adding new swords make sure to 
@@ -23,15 +23,22 @@ public class Sword : Equipment {
 		prefab = Resources.Load("Prefabs/Weapons/Swords/" + prefabs[tier]) as GameObject;
 		Debug.Log(prefab);
 		Debug.Log ("Prefabs/Weapons/Swords/" + prefabs [tier]);
+        dropPrefab = Resources.Load("Prefabs/Weapons/Pickups/" + spriteLocations[tier] + "Pickup") as GameObject;
+        Debug.Log(dropPrefab);
 	}
 
 	public override float GetDamage(){
 		return damage;
 	}
 
+    // Returns a prefab for the sword's model
 	public override GameObject GetPrefab(){
 		return prefab;
 	}
+
+    public override GameObject GetDropPrefab() {
+        return dropPrefab;
+    }
 
     public static ArrayList GetSwords() {
         ArrayList output = new ArrayList();

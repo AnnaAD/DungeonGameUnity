@@ -5,7 +5,8 @@ public class Item : ScriptableObject {
 	public GameObject gameObject;
 	public string type;
 	public float damage;
-	public GameObject prefab; 
+	public GameObject prefab;
+    public GameObject dropPrefab;
 
 	public Item(GameObject inventorySlotObject){
 		gameObject = Object.Instantiate(Resources.Load<GameObject>("prefabs/ItemObject"));
@@ -23,4 +24,9 @@ public class Item : ScriptableObject {
 	public virtual GameObject GetPrefab(){	
 		return null;
 	}
+
+    public virtual GameObject GetDropPrefab()
+    {
+        return dropPrefab;
+    }
 }
