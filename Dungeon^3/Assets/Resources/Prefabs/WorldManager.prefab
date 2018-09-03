@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114851932371877162}
   - component: {fileID: 114551648111668782}
   - component: {fileID: 114746045050450530}
+  - component: {fileID: 114723095993022492}
   m_Layer: 0
   m_Name: WorldManager
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1528325971482060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.2, y: 0.51, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,6 +67,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6abdfbd539b2d994bbe2c1fc5bb9359d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114723095993022492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528325971482060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b486a513c924f14a52391b182fff9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114746045050450530

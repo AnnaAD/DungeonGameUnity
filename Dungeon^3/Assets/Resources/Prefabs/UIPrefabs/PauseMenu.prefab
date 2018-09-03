@@ -133,7 +133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1977086711759844
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,9 +255,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114221029155108848, guid: 3c5df1adda121c44581d16a535d5543f,
-          type: 2}
-        m_MethodName: TogglePause
+      - m_Target: {fileID: 0}
+        m_MethodName: OnPauseClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
