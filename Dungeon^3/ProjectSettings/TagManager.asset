@@ -8,6 +8,7 @@ TagManager:
   - Pause Menu
   - Inventory
   - Level
+  - Arrow
   layers:
   - Default
   - TransparentFX

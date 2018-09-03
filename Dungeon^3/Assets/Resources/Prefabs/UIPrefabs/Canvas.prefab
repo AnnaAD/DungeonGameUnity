@@ -2252,8 +2252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  maxXP: 100
-  xpFactor: 1.5
+  maxXP: 50
+  xpFactor: 1.4
   playerStats: {fileID: 0}
 --- !u!114 &114867766907695542
 MonoBehaviour:

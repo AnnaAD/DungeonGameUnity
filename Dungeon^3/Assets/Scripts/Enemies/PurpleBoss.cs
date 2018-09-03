@@ -28,7 +28,7 @@ public class PurpleBoss : Enemy {
 		transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
 		transform.position = new Vector3 (transform.position.x, .75f, transform.position.y);
 		//toggles phase
-		if (timeSincePhaseChange > 20) {
+		if (timeSincePhaseChange > 25) {
 			phase++;
 			timeSincePhaseChange = 0;
 		}
@@ -40,7 +40,7 @@ public class PurpleBoss : Enemy {
 			}
 		} else if (phase == 1) {
 			GameObject.Instantiate(motherSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
-			GameObject.Instantiate(motherSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
+			// GameObject.Instantiate(motherSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
 			phase = 2;
 		} else if (phase == 2) {
 			if (timeSinceFire > timeBetweenLargeShots) {
@@ -48,9 +48,9 @@ public class PurpleBoss : Enemy {
 				timeSinceFire= 0;
 			}
 		} else if (phase == 3) {
+			//GameObject.Instantiate(purpleSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
 			GameObject.Instantiate(purpleSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
-			GameObject.Instantiate(purpleSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
-			GameObject.Instantiate(fastSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
+			//GameObject.Instantiate(fastSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
 			GameObject.Instantiate(fastSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
 			phase=0;
 		}

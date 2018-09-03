@@ -19,7 +19,7 @@ public class ExplodingBulletLogic : MonoBehaviour {
 			GameObject.Find ("Health").gameObject.GetComponent<PlayerHealth> ().UpdateHealth (-25);
 			Explode ();
 		}
-		else if(col.gameObject.layer==8||col.gameObject.tag=="Enemy") {
+		else if(col.gameObject.layer==8||col.gameObject.tag=="Enemy"||col.gameObject.tag == "Arrow") {
 			Explode ();
 		}
 	}
