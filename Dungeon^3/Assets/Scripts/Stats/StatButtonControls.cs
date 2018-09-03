@@ -43,14 +43,14 @@ public class StatButtonControls : MonoBehaviour {
 		}
 	}
 
-	public void dexterityClicked() {
+	/*public void dexterityClicked() {
 		playerStats.updateDexterity(1);
 		levelsUp--;
 		if (levelsUp < 1) {
 			gameObject.SetActive(false);
 			statDisplay.GetComponent<StatUI>().updateStats();
 		}
-	}
+	}*/
 
 	public void swordsmanshipClicked() {
 		playerStats.updateSwordsmanship(1);

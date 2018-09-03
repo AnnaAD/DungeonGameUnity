@@ -36,6 +36,6 @@ public class ArrowBehavior : MonoBehaviour {
 
 	private float calculateDamage(float bowdamage, float bowmanship) {
 		// Do bowdamage * .7f, with an additional .05f in the multiple per 1 bowdamage increase
-		return bowdamage * (.7f+(bowmanship*.05f));
+		return bowdamage * (1f+(bowmanship*1f));
 	}
 }

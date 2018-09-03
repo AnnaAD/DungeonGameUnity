@@ -19,7 +19,6 @@ public class StatUI : MonoBehaviour {
 			"HealthBoost: "   + stats.GetComponent<PlayerStats>().healthBoost + "\n" +
 			"Speed: "         + stats.GetComponent<PlayerStats>().speed + "\n" +
 			"Vitality: "      + stats.GetComponent<PlayerStats>().vitality + "\n" +
-			"Dexterity: "	  + stats.GetComponent<PlayerStats>().dexterity + "\n" +
 			"Swordsmanship: " + stats.GetComponent<PlayerStats>().swordsmanship + "\n" +
 			"Bowmanship: "    + stats.GetComponent<PlayerStats>().bowmanship;  
 	}

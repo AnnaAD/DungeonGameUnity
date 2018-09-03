@@ -7,7 +7,7 @@ public class PlayerStats : MonoBehaviour {
 	public int healthBoost;
 	public int speed;
 	public int vitality;
-	public int dexterity;
+	//public int dexterity;
 	public int swordsmanship;
 	public int bowmanship;
 	public GameObject StatDisplay;
@@ -42,18 +42,18 @@ public class PlayerStats : MonoBehaviour {
 
 	public void updateSpeed(int val) {
 		speed += val;
-		playerScript.incrementSpeed (val * .2f);
+		playerScript.incrementSpeed (val * .7f);
 	}
 
 	public void updateVitality(int val) {
 		vitality += val;
-		healthScript.incrementRegenRate (.2f*val);	
+		healthScript.incrementRegenRate (3f*val);	
 	}
 
-	public void updateDexterity(int val) {
+	/*public void updateDexterity(int val) {
 		dexterity += val;
 	}
-
+    */
 	public void updateSwordsmanship(int val) {
 		swordsmanship += val;
 	}

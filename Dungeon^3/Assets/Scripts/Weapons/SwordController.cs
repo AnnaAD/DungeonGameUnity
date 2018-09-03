@@ -31,6 +31,6 @@ public class SwordController: MonoBehaviour {
 
 	private float calculateDamage(float sworddamage, float swordsmanship) {
 		// Do bowdamage * .7f, with an additional .05f in the multiple per 1 bowdamage increase
-		return sworddamage * (.7f+(swordsmanship*.05f));
+		return sworddamage * (.7f+(swordsmanship*.5f));
 	}
 }

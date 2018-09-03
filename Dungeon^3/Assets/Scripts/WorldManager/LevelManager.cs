@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
     // Names of every level in order they are called (automate this somehow?)
-    string [] levels = {"level01","level02","level03" };
+    string [] levels = {"level01","level02","bosslevel" };
     // index of current level
     private int currentLevel;
 	// Use this for initialization
