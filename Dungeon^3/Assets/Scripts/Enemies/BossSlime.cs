@@ -24,6 +24,7 @@ public class BossSlime : Enemy {
                 Instantiate(SlimePrefab, transform.position + new Vector3(Random.Range(1f, 2.5f), 0f, Random.Range(1f, 2.5f)), Quaternion.identity);
                 Instantiate(SlimePrefab, transform.position + new Vector3(Random.Range(1f, 2.5f), 0f, Random.Range(1f, 2.5f)), Quaternion.identity);
                 Instantiate(SlimePrefab, transform.position + new Vector3(Random.Range(1f, 2.5f), 0f, Random.Range(1f, 2.5f)), Quaternion.identity);
+                timeSinceLastSlimes = 0;
             }
 
 
