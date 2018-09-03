@@ -22,41 +22,55 @@ public class PurpleBoss : Enemy {
 	
 	// Update is called once per frame
 	void Update () {
-		//Keeps the right movement
-		transform.LookAt(player.transform);
-		GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity*0f;
-		transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
-		transform.position = new Vector3 (transform.position.x, .75f, transform.position.y);
-		//toggles phase
-		if (timeSincePhaseChange > 25) {
-			phase++;
-			timeSincePhaseChange = 0;
-		}
-		//handles phase dependent behavior, mostly shooting
-		if (phase == 0) {
-			if (timeSinceFire > timeBetweenSmallShots) {
-				Fire ();
-				timeSinceFire = 0;
-			}
-		} else if (phase == 1) {
-			GameObject.Instantiate(motherSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
-			// GameObject.Instantiate(motherSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
-			phase = 2;
-		} else if (phase == 2) {
-			if (timeSinceFire > timeBetweenLargeShots) {
-				FireLargeBullet ();
-				timeSinceFire= 0;
-			}
-		} else if (phase == 3) {
-			//GameObject.Instantiate(purpleSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
-			GameObject.Instantiate(purpleSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
-			//GameObject.Instantiate(fastSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
-			GameObject.Instantiate(fastSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
-			phase=0;
-		}
+        if (CanSeePlayer())
+        {
+            //Keeps the right movement
+            transform.LookAt(player.transform);
+            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0f;
+            transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
+            transform.position = new Vector3(transform.position.x, .75f, transform.position.y);
+            //toggles phase
+            if (timeSincePhaseChange > 25)
+            {
+                phase++;
+                timeSincePhaseChange = 0;
+            }
+            //handles phase dependent behavior, mostly shooting
+            if (phase == 0)
+            {
+                if (timeSinceFire > timeBetweenSmallShots)
+                {
+                    Fire();
+                    timeSinceFire = 0;
+                }
+            }
+            else if (phase == 1)
+            {
+                GameObject.Instantiate(motherSlime, transform.position + new Vector3(Random.Range(1f, 2.5f), 0f, Random.Range(1f, 2.5f)), Quaternion.identity);
+                // GameObject.Instantiate(motherSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
+                phase = 2;
+            }
+            else if (phase == 2)
+            {
+                if (timeSinceFire > timeBetweenLargeShots)
+                {
+                    FireLargeBullet();
+                    timeSinceFire = 0;
+                }
+            }
+            else if (phase == 3)
+            {
+                //GameObject.Instantiate(purpleSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
+                GameObject.Instantiate(purpleSlime, transform.position + new Vector3(Random.Range(1f, 2.5f), 0f, Random.Range(1f, 2.5f)), Quaternion.identity);
+                //GameObject.Instantiate(fastSlime,transform.position+new Vector3(Random.Range(1f,2.5f),0f,Random.Range(1f,2.5f)),Quaternion.identity);
+                GameObject.Instantiate(fastSlime, transform.position + new Vector3(Random.Range(1f, 2.5f), 0f, Random.Range(1f, 2.5f)), Quaternion.identity);
+                phase = 0;
+            }
+        }
 		//increments timers
 		timeSinceFire += Time.deltaTime;
 		timeSincePhaseChange += Time.deltaTime;
+
 	}
 
 	public void Fire(){
