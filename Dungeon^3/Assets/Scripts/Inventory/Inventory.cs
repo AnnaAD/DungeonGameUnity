@@ -7,6 +7,8 @@ public class Inventory : MonoBehaviour {
 	private int slotDragged;
 	private Transform startParent;
 	private GameObject player;
+    [SerializeField] private Animator buttonAnimator;
+
 	// Use this for initialization
 	void Start () {
         
@@ -105,9 +107,13 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
+    // Adds item to inventory
     public void AddItem(int itemID, string type) {
+        // Iterates through last 8 inventory spaces
         for (int i = 4; i < items.Length; i++) {
+            // Open Space
             if(items[i] == null) {
+                buttonAnimator.SetTrigger("StartAnimationTrigger");
                 if(type == "sword") {
                     items[i] = new Sword(itemID, slots[i]);
                     return;

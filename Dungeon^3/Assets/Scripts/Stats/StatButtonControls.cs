@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Class responsible for handling Level Up Buttons
 public class StatButtonControls : MonoBehaviour {
 	[SerializeField]
 	private PlayerStats playerStats;

@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour {
 	public GameObject LevelUpDisplay;
 	public PlayerHealth healthScript;
 	public PlayerController playerScript;
+    [SerializeField] GameObject statButton;
 	//TODO: Assign statistics (i.e. speed, strength, etc. and have them incremented when character levels up)
 
 	public void Start(){
@@ -28,9 +29,10 @@ public class PlayerStats : MonoBehaviour {
 	public void LevelUp(){
 		Debug.Log("leveled up");
 		level++;
+        statButton.GetComponent<Animator>().SetTrigger("StartAnimationTrigger");
 		StatDisplay.GetComponent<StatUI>().updateStats();
 		LevelUpDisplay.GetComponent<StatButtonControls>().leveledUp();
-		LevelUpDisplay.SetActive(true);
+        LevelUpDisplay.SetActive(true);
 	}
 
 	public void updateHealthBoost(int val) {

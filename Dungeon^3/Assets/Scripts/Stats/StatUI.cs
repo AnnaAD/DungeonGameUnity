@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
+// Handles text of stats
 public class StatUI : MonoBehaviour {
 	private Text displayStats;
 	private GameObject stats;

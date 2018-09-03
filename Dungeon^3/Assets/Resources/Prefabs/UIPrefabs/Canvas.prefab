@@ -498,6 +498,7 @@ GameObject:
   - component: {fileID: 222757927067390772}
   - component: {fileID: 114942226653404302}
   - component: {fileID: 114403058297915346}
+  - component: {fileID: 95513190547396698}
   m_Layer: 0
   m_Name: InventoryToggleButton
   m_TagString: Inventory
@@ -603,6 +604,7 @@ GameObject:
   - component: {fileID: 222249692007788154}
   - component: {fileID: 114370791452761976}
   - component: {fileID: 114095045436089964}
+  - component: {fileID: 95380284584611674}
   m_Layer: 0
   m_Name: StatToggleButton
   m_TagString: Inventory
@@ -683,6 +685,42 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &95380284584611674
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1899701222990284}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72ffffc26fca8044e8b731520d614de7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95513190547396698
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1672590054571584}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72ffffc26fca8044e8b731520d614de7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114006671757379958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2166,6 +2204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windowOpen: 0
+  buttonAnimator: {fileID: 95513190547396698}
 --- !u!114 &114825439577273564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2186,7 +2225,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1851600857785278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba725dc39de5f438a83d9e866a7b1e2c, type: 3}
+  m_Script: {fileID: 11500000, guid: da128d67368b82e4f927c92f29a2c391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
@@ -2200,6 +2239,7 @@ MonoBehaviour:
   LevelUpDisplay: {fileID: 1377968996261270}
   healthScript: {fileID: 114453276811949556}
   playerScript: {fileID: 0}
+  statButton: {fileID: 1899701222990284}
 --- !u!114 &114858140567264010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2267,6 +2307,7 @@ MonoBehaviour:
   - {fileID: 1428003101191546}
   - {fileID: 1284172586088394}
   items: []
+  buttonAnimator: {fileID: 95513190547396698}
 --- !u!114 &114927420075429932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2429,6 +2470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windowOpen: 0
+  buttonAnimator: {fileID: 95380284584611674}
 --- !u!222 &222054361770816674
 CanvasRenderer:
   m_ObjectHideFlags: 1

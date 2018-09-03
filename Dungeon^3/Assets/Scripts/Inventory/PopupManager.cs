@@ -6,7 +6,7 @@ using System.Collections;
 // Use by putting in the action attribute of button
 public class PopupManager : MonoBehaviour {
 	public bool windowOpen;
-
+    [SerializeField] Animator buttonAnimator;
     public void Start(){
 		windowOpen = true;
         //In scene, window is open, this makes it closed at the start of game
@@ -16,12 +16,18 @@ public class PopupManager : MonoBehaviour {
 	public void toggleWindow()
 	{	//Slides entire object up or down just enough to hide only button or all but button
 		if(windowOpen){
-			this.GetComponent<Transform>().Translate( new Vector3 (0f, -174.4f, 0f));
+            //Closes Window
+            this.GetComponent<Transform>().Translate( new Vector3 (0f, -174.4f, 0f));
 			windowOpen = false;
 		} else {
+            // Opens Window
 			this.GetComponent<Transform>().Translate(new Vector3 (0f, 174.4f, 0f));
 			windowOpen = true;
-		}
+            // Ends animation for a new item or stat in the button
+            if(buttonAnimator!= null)
+                buttonAnimator.SetTrigger("EndAnimationTrigger");
+        }
+
 	}
 
 }
