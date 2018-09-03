@@ -255,7 +255,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114723095993022492, guid: 3c5df1adda121c44581d16a535d5543f,
+          type: 2}
         m_MethodName: OnPauseClick
         m_Mode: 1
         m_Arguments:
