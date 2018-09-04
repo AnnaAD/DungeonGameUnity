@@ -10,8 +10,6 @@ public class PlayerStats : MonoBehaviour {
 	//public int dexterity;
 	public int swordsmanship;
 	public int bowmanship;
-	public GameObject StatDisplay;
-	public GameObject LevelUpDisplay;
 	public PlayerHealth healthScript;
 	public PlayerController playerScript;
     [SerializeField] GameObject statButton;
@@ -30,9 +28,8 @@ public class PlayerStats : MonoBehaviour {
 		Debug.Log("leveled up");
 		level++;
         statButton.GetComponent<Animator>().SetTrigger("StartAnimationTrigger");
-		StatDisplay.GetComponent<StatUI>().updateStats();
-		LevelUpDisplay.GetComponent<StatButtonControls>().leveledUp();
-        LevelUpDisplay.SetActive(true);
+		GetComponent<StatUI>().refreshStatText();
+        GetComponent<StatButtonControls>().leveledUp();
 	}
 
 	public void updateHealthBoost(int val) {
@@ -50,10 +47,6 @@ public class PlayerStats : MonoBehaviour {
 		healthScript.incrementRegenRate (3f*val);	
 	}
 
-	/*public void updateDexterity(int val) {
-		dexterity += val;
-	}
-    */
 	public void updateSwordsmanship(int val) {
 		swordsmanship += val;
 	}

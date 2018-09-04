@@ -619,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98e81e1ebd53459eb81a0b6227d0280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 2
+  itemID: 3
   itemType: sword
   keyText: {fileID: 1940866883849296}
   pickupRange: 1

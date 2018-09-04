@@ -14,15 +14,15 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/dungeon.unity
     guid: 48f12f94f320d4f7cb238bf13c52cd98
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/_Scenes/deathmenu.unity
-    guid: 52202a57985cfc044a42f888ff1d839a
+    path: Assets/_Scenes/level01.unity
+    guid: c153268031f188044aad3e652403c896
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -33,6 +33,6 @@ EditorBuildSettings:
     path: Assets/_Scenes/bosslevel.unity
     guid: ccfee8faec989b842b47d306898f1898
   - enabled: 1
-    path: Assets/_Scenes/level01.unity
-    guid: c153268031f188044aad3e652403c896
+    path: Assets/_Scenes/deathmenu.unity
+    guid: 52202a57985cfc044a42f888ff1d839a
   m_configObjects: {}

@@ -164,7 +164,6 @@ GameObject:
   - component: {fileID: 224632599921580188}
   - component: {fileID: 222105862466266316}
   - component: {fileID: 114822051234789598}
-  - component: {fileID: 114202686370116238}
   m_Layer: 5
   m_Name: StatText
   m_TagString: Untagged
@@ -361,14 +360,13 @@ GameObject:
   - component: {fileID: 224857940844083882}
   - component: {fileID: 223331903186174042}
   - component: {fileID: 114011107583687944}
-  - component: {fileID: 114917015662589132}
   m_Layer: 5
   m_Name: LevelUpButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1516453157655590
 GameObject:
   m_ObjectHideFlags: 1
@@ -607,6 +605,8 @@ GameObject:
   - component: {fileID: 224106856428919538}
   - component: {fileID: 114916280400966418}
   - component: {fileID: 114989180912638492}
+  - component: {fileID: 114111458596637468}
+  - component: {fileID: 114460011153787020}
   m_Layer: 5
   m_Name: Stats
   m_TagString: Untagged
@@ -839,6 +839,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &114111458596637468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903942724812542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e0fb41535984dbe9087ef79e542433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelUpButtons: {fileID: 1505791186292048}
 --- !u!114 &114119294854024708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -851,8 +863,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  maxXP: 50
-  xpFactor: 1.4
+  maxXP: 60
+  xpFactor: 1.5
   playerStats: {fileID: 0}
 --- !u!114 &114120988157163438
 MonoBehaviour:
@@ -960,17 +972,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114202686370116238
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1198205062337744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c81dbd1ff1de44e1bbad049657bd8c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114236432303777258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1119,7 +1120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114917015662589132}
+      - m_Target: {fileID: 114111458596637468}
         m_MethodName: swordsmanshipClicked
         m_Mode: 1
         m_Arguments:
@@ -1289,7 +1290,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114917015662589132}
+      - m_Target: {fileID: 114111458596637468}
         m_MethodName: bowmanshipClicked
         m_Mode: 1
         m_Arguments:
@@ -1341,7 +1342,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114917015662589132}
+      - m_Target: {fileID: 114111458596637468}
         m_MethodName: speedClicked
         m_Mode: 1
         m_Arguments:
@@ -1489,6 +1490,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114460011153787020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903942724812542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c81dbd1ff1de44e1bbad049657bd8c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statWindowText: {fileID: 114822051234789598}
 --- !u!114 &114480291436215696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1769,7 +1782,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114917015662589132}
+      - m_Target: {fileID: 114111458596637468}
         m_MethodName: vitalityClicked
         m_Mode: 1
         m_Arguments:
@@ -2112,24 +2125,9 @@ MonoBehaviour:
   vitality: 0
   swordsmanship: 0
   bowmanship: 0
-  StatDisplay: {fileID: 1198205062337744}
-  LevelUpDisplay: {fileID: 1505791186292048}
   healthScript: {fileID: 114664673781282228}
   playerScript: {fileID: 0}
   statButton: {fileID: 1646986044619120}
---- !u!114 &114917015662589132
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1505791186292048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42e0fb41535984dbe9087ef79e542433, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
-  levelsUp: 0
 --- !u!114 &114939802516623130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2268,7 +2266,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114917015662589132}
+      - m_Target: {fileID: 114111458596637468}
         m_MethodName: healthBoostClicked
         m_Mode: 1
         m_Arguments:

@@ -391,11 +391,6 @@ Prefab:
     m_Modifications:
     - target: {fileID: 224532508691994402, guid: a7ec0da4486a0784f8a4434a9280e6be,
         type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 224532508691994402, guid: a7ec0da4486a0784f8a4434a9280e6be,
-        type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -484,6 +479,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114916280400966418, guid: a7ec0da4486a0784f8a4434a9280e6be,
+        type: 2}
+      propertyPath: playerScript
+      value: 
+      objectReference: {fileID: 1022889476}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7ec0da4486a0784f8a4434a9280e6be, type: 2}
   m_IsPrefabAsset: 0
@@ -1217,6 +1217,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1000010375858688, guid: 6f8cff8bfcfa34b5f8166fc7350f7e52,
     type: 2}
   m_PrefabInternal: {fileID: 1457133961}
+--- !u!114 &1022889476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114000012820835468, guid: 6f8cff8bfcfa34b5f8166fc7350f7e52,
+    type: 2}
+  m_PrefabInternal: {fileID: 1457133961}
+  m_Script: {fileID: 11500000, guid: 1d2ca9fcf276c417090dfbb8a442dc54, type: 3}
 --- !u!1001 &1023300146
 Prefab:
   m_ObjectHideFlags: 0

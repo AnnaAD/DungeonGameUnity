@@ -31,6 +31,8 @@ public class PlayerHealth : MonoBehaviour {
 			if(health < maxHealth) {
 				UpdateHealth(regenRate);
 			}
+            if (health > maxHealth)
+                health = maxHealth;
 			healthTimer = 0;
 		}
 	}

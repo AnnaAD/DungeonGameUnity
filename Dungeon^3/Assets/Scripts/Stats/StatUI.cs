@@ -4,17 +4,17 @@ using System.Collections;
 
 // Handles text of stats
 public class StatUI : MonoBehaviour {
-	private Text displayStats;
+    // The text that lists each stat and its value
+	[SerializeField] private Text statWindowText;
 	private GameObject stats;
-
 	void Start() {
 		stats = GameObject.Find("Stats");
-		displayStats = GetComponent<Text>();
-		updateStats();
+	    
+		refreshStatText();
 	}
 
-	public void updateStats() {
-		displayStats.text = 
+	public void refreshStatText() {
+		statWindowText.text = 
 			"Level: "         + stats.GetComponent<PlayerStats>().level + "\n" +
 			"HealthBoost: "   + stats.GetComponent<PlayerStats>().healthBoost + "\n" +
 			"Speed: "         + stats.GetComponent<PlayerStats>().speed + "\n" +

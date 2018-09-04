@@ -9,13 +9,12 @@ public class Sword : Equipment {
     //The indices represent a specific type of sword, when adding new swords make sure to 
     //add the location and the damage at the same location
     public static string [] spriteLocations = new string[] {"sword","gemSword","hammer","gemHammer"};
-    public static float[] damages = damages = new float[] { 5f, 10f, 15f, 30f };
+    public static float[] damages = damages = new float[] { 1f, 2.5f, 3.5f, 4f };
     public static string[] prefabs = new string[] { "sword", "gemSword", "hammer", "gemHammer" };
 
 
 	// Use this for initialization
 	public Sword (int tier,GameObject inventorySlotObject) : base(tier,inventorySlotObject) {
-		
 		gameObject.GetComponent<Image> ().sprite = Resources.Load<Sprite>("Images/Swords/"+spriteLocations[tier]);
 		damage=damages[tier];
 		type = "sword";
